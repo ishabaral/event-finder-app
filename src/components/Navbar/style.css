@@ -1,0 +1,26 @@
+.nav-top {
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  padding: 20px;
+  top: 0;
+  box-sizing: border-box;
+}
+.heading {
+  text-decoration: none;
+  color: #000000;
+  font-size: 28px;
+  font-weight: 600;
+  padding: 20px;
+  position: relative;
+}
+
+.add-event {
+  background-color: #7020ff;
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  position: relative;
+  border-radius: 4px;
+  float: right;
+}

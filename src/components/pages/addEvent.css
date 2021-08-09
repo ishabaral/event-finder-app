@@ -1,0 +1,39 @@
+h1 {
+  text-align: center;
+}
+
+.box {
+  width: 550px;
+  padding: 40px;
+  margin: 0 auto;
+  background: #fff;
+  position: relative;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+input {
+  padding: 10px;
+  font-size: 17px;
+  width: 90%;
+  outline: none;
+  border: 1px #7020ff solid;
+  margin: 5px;
+  border-radius: 4px;
+}
+input[type="submit"] {
+  margin: 10px 0 0 10px;
+  width: 94%;
+  font-size: 20px;
+  color: white;
+  background: #7020ff;
+}
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: #6916f8;
+}
+
+.error-message {
+  color: rgb(255, 129, 129);
+  padding: 0 0 5px 15px;
+  font-style: italic;
+}
