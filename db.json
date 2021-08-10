@@ -1,0 +1,71 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "concert eventsd sdg drg ",
+      "date": "2:00pm",
+      "startTime": "2:00pm",
+      "description": "2:00pm",
+      "author": "Isha Baral",
+      "subjectId": 1
+    },
+    {
+      "id": 2,
+      "title": "Dance Competion",
+      "date": "August 20, 2021",
+      "startTime": "2pm",
+      "description": "Excellent dance performance to refesh your mood",
+      "author": "Pratima",
+      "subjectId": 2
+    },
+    {
+      "title": "Motivational Seminar by Nick Vujicic",
+      "date": "September 8, 2021",
+      "startTime": "1pm",
+      "description": "Nick Vujicic will be invited to the seminar to motivate youth",
+      "author": "Perish Ghimire",
+      "subjectId": 1,
+      "id": 3
+    },
+    {
+      "title": "xdgdfg ",
+      "date": "fr e 5",
+      "startTime": "4:00pm",
+      "description": "4:00pm",
+      "id": 4
+    },
+    {
+      "title": "Webinar ",
+      "date": "September 20, 2021",
+      "startTime": "2pm",
+      "description": "Its about concert and entertainment",
+      "author": "Isha Baral",
+      "subjectId": 1,
+      "id": 5
+    },
+    {
+      "title": "fdfgdh",
+      "date": "et 6",
+      "startTime": "5:00pm",
+      "description": "5:00pm",
+      "id": 6
+    },
+    {
+      "title": "event added ",
+      "date": "a sg 6 ",
+      "startTime": "6:00pm",
+      "description": "6:00pm",
+      "id": 7
+    }
+  ],
+  "subjects": [
+    {
+      "name": "Entertainment",
+      "id": 1
+    },
+    {
+      "name": "Dance",
+      "id": 2
+    }
+  ]
+}

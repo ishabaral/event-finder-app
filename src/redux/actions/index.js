@@ -27,9 +27,10 @@ export const fetchEventFailure = (error) => {
   };
 };
 
-export const openModal = () => {
+export const openModal = (currentId) => {
   return {
     type: OPEN,
+    payload: currentId,
   };
 };
 

@@ -7,7 +7,8 @@
 
 .home,
 .addEvent,
-.viewDetails {
+.viewDetails,
+.homeTwo {
   background-color: #f5f7fb;
   position: relative;
   top: 80px;

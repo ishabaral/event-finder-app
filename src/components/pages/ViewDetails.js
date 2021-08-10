@@ -20,6 +20,10 @@ function ViewDetails() {
                     <td>{event.title}</td>
                   </tr>
                   <tr>
+                    <th>Date</th>
+                    <td>{event.date}</td>
+                  </tr>
+                  <tr>
                     <th>Start Time</th>
                     <td>{event.startTime}</td>
                   </tr>

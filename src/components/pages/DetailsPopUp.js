@@ -4,19 +4,21 @@ import { useDispatch } from "react-redux";
 import { closeModal } from "../../redux/actions";
 import "./popUpStyle.css";
 
-function DetailsPopUp({ eventId }) {
+function DetailsPopUp() {
+  const currentId = useSelector((state) => state.isOpen.currentId);
   const dispatch = useDispatch();
   const events = useSelector((state) => state.eventReducer.events);
-  console.log(eventId);
+  console.log(currentId);
 
   return (
     <div className="modal">
       {events
-        .filter((event) => event.id == { eventId })
+        .filter((event) => event.id == currentId)
         .map((event) => {
           return (
             <div key={event.id}>
               <h2>Title: {event.title}</h2>
+              <p>Start time: {event.startTime}</p>
             </div>
           );
         })}

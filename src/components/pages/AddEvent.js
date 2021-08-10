@@ -1,15 +1,35 @@
 import { ErrorMessage } from "@hookform/error-message";
-import React from "react";
-import { useForm } from "react-hook-form";
+import axios from "axios";
+import React, { useState } from "react";
+import { set, useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 import "./addEvent.css";
 
 function AddEvent() {
+  const history = useHistory();
+
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = async (data, e) => {
+    const events = {
+      title: data.title,
+      date: data.date,
+      startTime: data.startTime,
+      description: data.startTime,
+      author: data.author,
+    };
+    e.preventDefault();
+    await axios.post("http://localhost:4000/events", events, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    history.push("/");
+  };
 
   return (
     <div className="addEvent">
@@ -23,6 +43,21 @@ function AddEvent() {
         <br />
         <div className="error-message">
           <ErrorMessage errors={errors} name="title" />
+        </div>
+        <br />
+        <input
+          {...register("date", {
+            required: "Date is required",
+            pattern: {
+              value: /(?=.*[0-9])/,
+              message: "Must include some number",
+            },
+          })}
+          placeholder="Date"
+        />
+        <br />
+        <div className="error-message">
+          <ErrorMessage errors={errors} name="date" />
         </div>
         <br />
         <input
