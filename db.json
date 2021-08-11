@@ -1,15 +1,6 @@
 {
   "events": [
     {
-      "id": 1,
-      "title": "concert eventsd sdg drg ",
-      "date": "2:00pm",
-      "startTime": "2:00pm",
-      "description": "2:00pm",
-      "author": "Isha Baral",
-      "subjectId": 1
-    },
-    {
       "id": 2,
       "title": "Dance Competion",
       "date": "August 20, 2021",
@@ -20,42 +11,53 @@
     },
     {
       "title": "Motivational Seminar by Nick Vujicic",
-      "date": "September 8, 2021",
-      "startTime": "1pm",
+      "date": "2021 oct 3",
+      "startTime": "1:00pm",
       "description": "Nick Vujicic will be invited to the seminar to motivate youth",
-      "author": "Perish Ghimire",
+      "author": "#youthmotivation",
       "subjectId": 1,
       "id": 3
     },
     {
-      "title": "xdgdfg ",
-      "date": "fr e 5",
-      "startTime": "4:00pm",
-      "description": "4:00pm",
-      "id": 4
-    },
-    {
       "title": "Webinar ",
       "date": "September 20, 2021",
-      "startTime": "2pm",
+      "startTime": "2:00pm",
       "description": "Its about concert and entertainment",
-      "author": "Isha Baral",
+      "author": "Edge Band",
       "subjectId": 1,
       "id": 5
     },
     {
-      "title": "fdfgdh",
-      "date": "et 6",
+      "title": "aaa ",
+      "date": "dec3 ",
       "startTime": "5:00pm",
-      "description": "5:00pm",
+      "description": "eg hrtjtjt jtku kukukukukkk7 kkk",
+      "author": "r rtju ",
       "id": 6
     },
     {
-      "title": "event added ",
-      "date": "a sg 6 ",
-      "startTime": "6:00pm",
-      "description": "6:00pm",
+      "title": "bbbbb",
+      "date": "dec4",
+      "startTime": "9:00pm",
+      "description": "dujhr ry r6u jjtk utk k 7ik57 65u 6 u w3",
+      "author": "e eu ",
       "id": 7
+    },
+    {
+      "title": "aaaD",
+      "date": "dec3",
+      "startTime": "1:00pm",
+      "description": "fgd dfh dfjh fj yk ykyt kr fdh fh ",
+      "author": "s ",
+      "id": 9
+    },
+    {
+      "title": "fg dhf",
+      "date": "dec3",
+      "startTime": "5:00pm",
+      "description": "xxdg h jf kuk l luyfkjsr ae  we ",
+      "author": "e re",
+      "id": 10
     }
   ],
   "subjects": [

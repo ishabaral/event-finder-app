@@ -5,6 +5,8 @@ import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import "./loadingStyle.css";
 import DetailsPopUp from "./DetailsPopUp";
 import { useDispatch } from "react-redux";
+import axios from "axios";
+import { fetchEvent } from "../../redux/actions";
 
 function Home() {
   const events = useSelector((state) => state.eventReducer.events);
@@ -12,6 +14,11 @@ function Home() {
   const isOpen = useSelector((state) => state.isOpen);
   const dispatch = useDispatch();
   const [eventId, setEventId] = useState(0);
+
+  const handleDelete = async (id) => {
+    await axios.delete(`http://localhost:4000/events/${id}`);
+    dispatch(fetchEvent());
+  };
 
   return (
     <div className="home">
@@ -29,6 +36,7 @@ function Home() {
               <th>Event Title</th>
               <th>Date</th>
               <th>Start Time</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -84,14 +92,16 @@ function Home() {
                           class="far fa-edit"
                         ></i>
                       </Link>
-                      <i
-                        style={{
-                          color: "red",
-                          padding: "0 10px",
-                          fontSize: 20,
-                        }}
-                        class="fas fa-trash-alt"
-                      ></i>
+                      <button onClick={() => handleDelete(event.id)}>
+                        <i
+                          style={{
+                            color: "red",
+                            padding: "0 10px",
+                            fontSize: 20,
+                          }}
+                          class="fas fa-trash-alt"
+                        ></i>
+                      </button>
                     </td>
                   </tr>
                 );

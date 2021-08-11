@@ -2,11 +2,14 @@ import { ErrorMessage } from "@hookform/error-message";
 import axios from "axios";
 import React, { useState } from "react";
 import { set, useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { fetchEvent, fetchEventSuccess } from "../../redux/actions";
 import "./addEvent.css";
 
 function AddEvent() {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -19,15 +22,17 @@ function AddEvent() {
       title: data.title,
       date: data.date,
       startTime: data.startTime,
-      description: data.startTime,
+      description: data.description,
       author: data.author,
     };
     e.preventDefault();
+
     await axios.post("http://localhost:4000/events", events, {
       headers: {
         "Content-Type": "application/json",
       },
     });
+    dispatch(fetchEvent());
     history.push("/");
   };
 
@@ -90,7 +95,11 @@ function AddEvent() {
           <ErrorMessage errors={errors} name="description" />
         </div>
         <br />
-        <input type="text" placeholder="Author (optional)" />
+        <input
+          type="text"
+          {...register("author")}
+          placeholder="Author (optional)"
+        />
         <br />
         <input type="Submit" value="Add Event" />
       </form>

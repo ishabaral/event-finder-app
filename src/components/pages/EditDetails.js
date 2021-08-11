@@ -2,13 +2,15 @@ import { ErrorMessage } from "@hookform/error-message";
 import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
+import { fetchEvent } from "../../redux/actions";
 import "./addEvent.css";
 
 function EditDetails() {
   const { id } = useParams();
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const events = useSelector((state) => state.eventReducer.events);
 
@@ -23,7 +25,7 @@ function EditDetails() {
       title: data.title,
       date: data.date,
       startTime: data.startTime,
-      description: data.startTime,
+      description: data.description,
       author: data.author,
     };
     console.log(data);
@@ -33,6 +35,7 @@ function EditDetails() {
         "Content-Type": "application/json",
       },
     });
+    dispatch(fetchEvent());
     history.push("/");
   };
 
@@ -67,6 +70,7 @@ function EditDetails() {
                     message: "Must include some number",
                   },
                 })}
+                defaultValue={event.date}
                 placeholder="Date"
               />
               <br />
@@ -109,6 +113,7 @@ function EditDetails() {
               <input
                 defaultValue={event.author}
                 type="text"
+                {...register("author")}
                 placeholder="Author (optional)"
               />
               <br />
