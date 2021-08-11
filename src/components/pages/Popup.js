@@ -11,12 +11,15 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    backgroundColor: "#7020ff",
+    color: "white",
+    boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
   },
 };
 
 Modal.setAppElement("#root");
 
-function HomeTwo(props) {
+function Popup(props) {
   const { id, isModalOpen, modal } = props;
   const events = useSelector((state) => state.eventReducer.events);
 
@@ -54,4 +57,4 @@ function HomeTwo(props) {
   );
 }
 
-export default HomeTwo;
+export default Popup;

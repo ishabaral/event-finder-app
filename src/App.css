@@ -1,14 +1,13 @@
 * {
   margin: 0 auto;
-  /* background-color: #f5f7fb; */
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
 }
 
 .home,
 .addEvent,
-.viewDetails,
-.homeTwo {
+.editDetails,
+.notFound {
   background-color: #f5f7fb;
   position: relative;
   top: 80px;

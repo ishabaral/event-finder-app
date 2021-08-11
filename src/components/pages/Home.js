@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import "./home.css";
 import { useSelector } from "react-redux";
-import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./loadingStyle.css";
-import DetailsPopUp from "./DetailsPopUp";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { fetchEvent } from "../../redux/actions";
-import HomeTwo from "./HomeTwo";
+import Popup from "./Popup";
 
 function Home() {
   const events = useSelector((state) => state.eventReducer.events);
   const loading = useSelector((state) => state.eventReducer.loading);
-  const isOpen = useSelector((state) => state.isOpen);
   const dispatch = useDispatch();
   const [modalEventId, setModalEventId] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,12 +32,11 @@ function Home() {
   return (
     <div className="home">
       <div class="tbl-header">
-        <Link to="/homeTwo">HomeTwo</Link>
         <table
           className="home-table"
-          cellpadding="0"
-          cellSpacing="0"
-          border="0"
+          // cellpadding="0"
+          // cellSpacing="0"
+          // border="0"
         >
           <thead>
             <tr>
@@ -68,8 +65,8 @@ function Home() {
                     <td>{event.title}</td>
                     <td>{event.date}</td>
                     <td>{event.startTime}</td>
-                    <td>
-                      <Link to={`viewDetails/${event.id}`}>
+                    <td className="actions">
+                      <a onClick={() => handlePopUp(event.id)}>
                         <i
                           style={{
                             color: "#7020ff",
@@ -78,18 +75,7 @@ function Home() {
                           }}
                           class="far fa-eye"
                         ></i>
-                      </Link>
-                      <button onClick={() => handlePopUp(event.id)}>
-                        <i
-                          style={{
-                            color: "#7020ff",
-                            padding: "0 10px",
-                            fontSize: 20,
-                          }}
-                          class="far fa-eye"
-                        ></i>
-                      </button>
-                      {/* {isOpen.isOpened ? <DetailsPopUp /> : ""} */}
+                      </a>
                       <Link to={`/editDetails/${event.id}`}>
                         <i
                           style={{
@@ -100,7 +86,7 @@ function Home() {
                           class="far fa-edit"
                         ></i>
                       </Link>
-                      <button onClick={() => handleDelete(event.id)}>
+                      <a onClick={() => handleDelete(event.id)}>
                         <i
                           style={{
                             color: "red",
@@ -109,7 +95,7 @@ function Home() {
                           }}
                           class="fas fa-trash-alt"
                         ></i>
-                      </button>
+                      </a>
                     </td>
                   </tr>
                 );
@@ -117,7 +103,7 @@ function Home() {
             )}
           </tbody>
         </table>
-        <HomeTwo id={modalEventId} isModalOpen={isModalOpen} modal={modal} />
+        <Popup id={modalEventId} isModalOpen={isModalOpen} modal={modal} />
       </div>
     </div>
   );

@@ -40,7 +40,7 @@ function EditDetails() {
   };
 
   return (
-    <div className="addEvent">
+    <div className="editDetails">
       {events
         .filter((event) => event.id == id)
         .map((event) => {

@@ -8,9 +8,10 @@
 }
 .heading {
   text-decoration: none;
-  color: #000000;
-  font-size: 28px;
-  font-weight: 600;
+  color: #7020ff;
+  font-family: "Great Vibes", cursive;
+  font-size: 48px;
+  font-weight: 500;
   padding: 20px;
   position: relative;
 }

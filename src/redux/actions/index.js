@@ -27,19 +27,6 @@ export const fetchEventFailure = (error) => {
   };
 };
 
-export const openModal = (currentId) => {
-  return {
-    type: OPEN,
-    payload: currentId,
-  };
-};
-
-export const closeModal = () => {
-  return {
-    type: CLOSE,
-  };
-};
-
 export const fetchEvent = () => {
   return function (dispatch) {
     dispatch(fetchEventRequest());

@@ -5,7 +5,7 @@ import "./style.css";
 function Navbar() {
   return (
     <div className="nav-top">
-      <Link class="heading" to="/">
+      <Link className="heading" to="/">
         Event Finder App
       </Link>
       <Link className="add-event" to="/addEvent">
