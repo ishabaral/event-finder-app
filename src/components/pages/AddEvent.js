@@ -38,7 +38,8 @@ function AddEvent() {
 
   return (
     <div className="addEvent">
-      <form className="box" onSubmit={handleSubmit(onSubmit)}>
+      <form className="event-box" onSubmit={handleSubmit(onSubmit)}>
+        <h2>Add Event </h2>
         <input
           {...register("title", {
             required: "Title is required",

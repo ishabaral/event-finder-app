@@ -4,7 +4,8 @@ import {
   FETCH_EVENT_FAILURE,
   FETCH_EVENT_REQUEST,
   FETCH_EVENT_SUCCESS,
-  OPEN,
+  LOG_IN,
+  LOG_OUT,
 } from "./actionTypes";
 
 export const fetchEventRequest = () => {
@@ -24,6 +25,18 @@ export const fetchEventFailure = (error) => {
   return {
     type: FETCH_EVENT_FAILURE,
     payload: error,
+  };
+};
+
+export const logIn = () => {
+  return {
+    type: LOG_IN,
+  };
+};
+
+export const logOut = () => {
+  return {
+    type: LOG_OUT,
   };
 };
 

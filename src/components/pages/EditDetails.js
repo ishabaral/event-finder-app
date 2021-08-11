@@ -47,7 +47,7 @@ function EditDetails() {
           return (
             <form
               key={event.id}
-              className="box"
+              className="event-box"
               onSubmit={handleSubmit(onSubmit)}
             >
               <input

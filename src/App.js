@@ -1,22 +1,24 @@
+import { useSelector } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import AddEvent from "./components/pages/AddEvent";
-import EditDetails from "./components/pages/EditDetails";
-import Home from "./components/pages/Home";
+import Pages from "./components/pages";
+import Login from "./components/pages/Login";
 import NotFound from "./components/pages/NotFound";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
+  const isLogged = useSelector((state) => state.isLogged);
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/addEvent" exact component={AddEvent} />
-          <Route path="/editDetails/:id">
-            <EditDetails />
-          </Route>
+          <Route path="/login" exact component={Login} />
+          <ProtectedRoute
+            exact
+            path="/"
+            isLogged={isLogged}
+            component={Pages}
+          />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>

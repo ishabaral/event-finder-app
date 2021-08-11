@@ -3,3 +3,7 @@ export const FETCH_EVENT_REQUEST = "FETCH_EVENT_REQUEST";
 export const FETCH_EVENT_SUCCESS = "FETCH_EVENT_SUCCESS";
 
 export const FETCH_EVENT_FAILURE = "FETCH_EVENT_FAILURE";
+
+export const LOG_IN = "LOG_IN";
+
+export const LOG_OUT = "LOG_OUT";
