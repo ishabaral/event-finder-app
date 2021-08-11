@@ -6,96 +6,71 @@
       "startTime": "1:00pm",
       "description": "Nick Vujicic will be invited to the seminar to motivate youth",
       "author": "#youthmotivation",
-      "subjectId": 1,
-      "id": 3
-    },
-    {
-      "title": "Webinar ",
-      "date": "September 20, 2021",
-      "startTime": "2:00pm",
-      "description": "Its about concert and entertainment",
-      "author": "Edge Band",
-      "subjectId": 1,
-      "id": 5
-    },
-    {
-      "title": "aaa ",
-      "date": "dec3 ",
-      "startTime": "5:00pm",
-      "description": "eg hrtjtjt jtku kukukukukkk7 kkk",
-      "author": "r rtju ",
-      "id": 6
-    },
-    {
-      "title": "bbbbb",
-      "date": "dec4",
-      "startTime": "9:00pm",
-      "description": "dujhr ry r6u jjtk utk k 7ik57 65u 6 u w3",
-      "author": "e eu ",
-      "id": 7
-    },
-    {
-      "title": "aaaD",
-      "date": "dec3",
-      "startTime": "1:00pm",
-      "description": "fgd dfh dfjh fj yk ykyt kr fdh fh ",
-      "author": "s ",
-      "id": 9
-    },
-    {
-      "title": "Webinar ",
-      "date": "September 20, 2021",
-      "startTime": "2:00pm",
-      "description": "Its about concert and entertainment",
-      "author": "Edge Band",
-      "subjectId": 1,
-      "id": 10
-    },
-    {
-      "title": "Webinar ",
-      "date": "September 20, 2021",
-      "startTime": "2:00pm",
-      "description": "Its about concert and entertainment",
-      "author": "Edge Band",
-      "subjectId": 1,
-      "id": 11
-    },
-    {
-      "title": "Webinar ",
-      "date": "September 20, 2021",
-      "startTime": "2:00pm",
-      "description": "Its about concert and entertainment",
-      "author": "Edge Band",
-      "subjectId": 1,
-      "id": 12
-    },
-    {
-      "title": "Webinar ",
-      "date": "September 20, 2021",
-      "startTime": "2:00pm",
-      "description": "Its about concert and entertainment",
-      "author": "Edge Band",
-      "subjectId": 1,
-      "id": 13
-    },
-    {
-      "title": "Webinar ",
-      "date": "September 20, 2021",
-      "startTime": "2:00pm",
-      "description": "Its about concert and entertainment",
-      "author": "Edge Band",
-      "subjectId": 1,
-      "id": 14
-    }
-  ],
-  "subjects": [
-    {
-      "name": "Entertainment",
       "id": 1
     },
     {
-      "name": "Dance",
+      "title": "EUPHORIA ( THE AFROBEATS EXPERIENCE ) AFRO PARTY",
+      "date": "September 29, 2021",
+      "startTime": "4:30pm",
+      "description": "This is a party that will give you an ultimate afrobeats experience . the most anticipated party of the year featuring toronto finest djs , mc and host for the night.",
+      "author": "EUPHORIA",
       "id": 2
+    },
+    {
+      "title": "Upper Mustang Motorcycle Tour",
+      "date": "Oct 3, 2021 - Oct 15, 2021",
+      "startTime": "7:00am",
+      "description": "This ride is one of the ultimate rides in the rain shadow part of the wind-swept desert landscape of the Himalayas......",
+      "author": "fireballsadventures",
+      "id": 3
+    },
+    {
+      "title": "Manaslu Circuit Trek, Nepal Himalaya (5210m) - 16 Days",
+      "date": "Mon Nov 1, 2021 ",
+      "startTime": "6:00am",
+      "description": " Trekking in Nepal Mt.Manslu ( 8163m eight highest mountain in the world and is one of the fourteen 8000⁺ meter peaks. it dominates the Manaslu range bordering the Ganesh Himal range on the east and Annapurna to the west. Since the border with Tibet is a strategic location. The area is considered as restricted trekking destination where trek must be fully organized through a reputed trekking Agency. Like in other restricted trekking places, the permit is issued and regulated by the Immigration Department of Nepal. The area is relatively untouched by tourism but the numbers are exceeding dramatically the Manaslu circuit Trek start from a small village near the historic Gorkha (Gurkha) kingdom now a district of Nepal. We pass through lush hills and canyons dotted with enchanting villages on our way to Larkya la (5163m) one of the beautiful passes of the Himalaya. We drop down from Larky la to Marshayangdi valley, part of the Annapurna circuit and to the road which leads us back to Kathmandu. Since Annapurna circuit dying due to road construction, the Manaslu circuit is dramatically becoming one of the very popular trekking place in the Himalaya.",
+      "author": "Our Club is registered on The British Mountaineering Council (BMC)",
+      "id": 4
+    },
+    {
+      "title": "Cycling Competiton",
+      "date": "2021 September 25",
+      "startTime": "7:00am",
+      "description": "Cycling competition is going to be held between the youths of Pokhara",
+      "author": "Lakeside Cycling",
+      "id": 5
+    },
+    {
+      "title": "Cycling Competiton",
+      "date": "2021 September 25",
+      "startTime": "7:00am",
+      "description": "Cycling competition is going to be held between the youths of Pokhara",
+      "author": "Lakeside Cycling",
+      "id": 6
+    },
+    {
+      "title": "aaaa",
+      "date": "30th Dec",
+      "startTime": "3:00am ",
+      "description": "sg dhrtfh jyt kyu uyok ydt sr aw w  ",
+      "author": " es r r",
+      "id": 7
+    },
+    {
+      "title": "Cycling Competiton",
+      "date": "2021 September 25",
+      "startTime": "7:00am",
+      "description": "Cycling competition is going to be held between the youths of Pokhara",
+      "author": "Lakeside Cycling",
+      "id": 8
+    },
+    {
+      "title": "Cycling Competiton",
+      "date": "2021 September 25",
+      "startTime": "7:00am",
+      "description": "Cycling competition is going to be held between the youths of Pokhara",
+      "author": "Lakeside Cycling",
+      "id": 9
     }
   ]
 }

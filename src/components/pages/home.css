@@ -70,7 +70,13 @@ tbody tr:hover {
   background-color: #f5f7fb;
 }
 
-.actions a {
-  padding: 10px;
-  display: inline;
+.fa-eye,
+.fa-edit,
+.fa-trash-alt {
+  color: #7020ff;
+  padding: 0 10px;
+  font-size: 20px;
+}
+.fa-trash-alt {
+  color: red;
 }

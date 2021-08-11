@@ -32,12 +32,7 @@ function Home() {
   return (
     <div className="home">
       <div class="tbl-header">
-        <table
-          className="home-table"
-          // cellpadding="0"
-          // cellSpacing="0"
-          // border="0"
-        >
+        <table className="home-table">
           <thead>
             <tr>
               <th>Id</th>
@@ -67,34 +62,13 @@ function Home() {
                     <td>{event.startTime}</td>
                     <td className="actions">
                       <a onClick={() => handlePopUp(event.id)}>
-                        <i
-                          style={{
-                            color: "#7020ff",
-                            padding: "0 10px",
-                            fontSize: 20,
-                          }}
-                          class="far fa-eye"
-                        ></i>
+                        <i class="far fa-eye"></i>
                       </a>
                       <Link to={`/editDetails/${event.id}`}>
-                        <i
-                          style={{
-                            color: "#7020ff",
-                            padding: "0 10px",
-                            fontSize: 20,
-                          }}
-                          class="far fa-edit"
-                        ></i>
+                        <i class="far fa-edit"></i>
                       </Link>
                       <a onClick={() => handleDelete(event.id)}>
-                        <i
-                          style={{
-                            color: "red",
-                            padding: "0 10px",
-                            fontSize: 20,
-                          }}
-                          class="fas fa-trash-alt"
-                        ></i>
+                        <i class="fas fa-trash-alt"></i>
                       </a>
                     </td>
                   </tr>
