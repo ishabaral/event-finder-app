@@ -1,6 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Modal from "react-modal";
+import "./popUpStyle.css";
+import { useSelector } from "react-redux";
 
 const customStyles = {
   content: {
@@ -13,46 +14,41 @@ const customStyles = {
   },
 };
 
-// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
-function HomeTwo() {
-  let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
-  }
+function HomeTwo(props) {
+  const { id, isModalOpen, modal } = props;
+  const events = useSelector((state) => state.eventReducer.events);
 
   function closeModal() {
-    setIsOpen(false);
+    modal(false);
   }
 
   return (
-    <div className="homeTwo">
-      <button onClick={openModal}>Open Modal</button>
+    <div>
       <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
+        // className="pop-up"
+        isOpen={isModalOpen}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
+        {events
+          .filter((event) => event.id == id)
+          .map((event) => {
+            return (
+              <div className="displayEvents">
+                <h3>{event.title}</h3>
+                <button onClick={closeModal}>
+                  <i class="fas fa-times"></i>
+                </button>
+                <p>Date: {event.date}</p>
+                <p>Start Time : {event.startTime}</p>
+                <p>Description: {event.description}</p>
+                <p>Author: {event.author}</p>
+              </div>
+            );
+          })}
       </Modal>
     </div>
   );

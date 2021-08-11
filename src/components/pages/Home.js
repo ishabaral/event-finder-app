@@ -7,17 +7,28 @@ import DetailsPopUp from "./DetailsPopUp";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { fetchEvent } from "../../redux/actions";
+import HomeTwo from "./HomeTwo";
 
 function Home() {
   const events = useSelector((state) => state.eventReducer.events);
   const loading = useSelector((state) => state.eventReducer.loading);
   const isOpen = useSelector((state) => state.isOpen);
   const dispatch = useDispatch();
-  const [eventId, setEventId] = useState(0);
+  const [modalEventId, setModalEventId] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleDelete = async (id) => {
     await axios.delete(`http://localhost:4000/events/${id}`);
     dispatch(fetchEvent());
+  };
+
+  const modal = (t) => {
+    setIsModalOpen(t);
+  };
+
+  const handlePopUp = (id) => {
+    modal(true);
+    setModalEventId(id);
   };
 
   return (
@@ -68,10 +79,7 @@ function Home() {
                           class="far fa-eye"
                         ></i>
                       </Link>
-                      {/* <button
-                        id={event.id}
-                        onClick={(e) => dispatch(openModal(e.target.id))}
-                      >
+                      <button onClick={() => handlePopUp(event.id)}>
                         <i
                           style={{
                             color: "#7020ff",
@@ -80,7 +88,7 @@ function Home() {
                           }}
                           class="far fa-eye"
                         ></i>
-                      </button> */}
+                      </button>
                       {/* {isOpen.isOpened ? <DetailsPopUp /> : ""} */}
                       <Link to={`/editDetails/${event.id}`}>
                         <i
@@ -109,6 +117,7 @@ function Home() {
             )}
           </tbody>
         </table>
+        <HomeTwo id={modalEventId} isModalOpen={isModalOpen} modal={modal} />
       </div>
     </div>
   );

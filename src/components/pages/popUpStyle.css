@@ -1,7 +1,21 @@
-.modal {
-  height: 40vh;
-  width: 100%;
-  z-index: 1;
-  background-color: aquamarine;
-  color: black;
+/* .pop-up {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+} */
+
+.displayEvents h3 {
+  display: inline;
+  padding: 10px;
+}
+
+.displayEvents button {
+  float: right;
+}
+
+.displayEvents p {
+  padding: 10px;
 }
