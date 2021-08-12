@@ -8,6 +8,7 @@
 }
 
 thead {
+  /* background: linear-gradient(to right, #3d6cb9, #226b80, #3d6cb9); */
   background-color: #7020ff;
 }
 
@@ -55,6 +56,7 @@ th {
   color: white;
   text-transform: uppercase;
   width: 300px;
+  letter-spacing: 1.5px;
 }
 td {
   padding: 15px 15px;
@@ -74,9 +76,17 @@ tbody tr:hover {
 .fa-edit,
 .fa-trash-alt {
   color: #7020ff;
-  padding: 0 10px;
+  padding: 0 5px;
   font-size: 20px;
 }
 .fa-trash-alt {
-  color: red;
+  color: rgb(211 1 0);
+}
+
+@media only screen and (max-width: 800px) {
+  .fa-eye,
+  .fa-edit,
+  .fa-trash-alt {
+    padding: 5px;
+  }
 }

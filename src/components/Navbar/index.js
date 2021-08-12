@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { logOut } from "../../redux/actions";
 import "./style.css";
 
@@ -9,24 +9,26 @@ function Navbar() {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const dispatch = useDispatch();
   const history = useHistory();
+  const [responsive, setResponsive] = useState(false);
 
   const handleLogout = () => {
     dispatch(logOut());
     console.log(isLoggedIn);
-    debugger;
     history.push("/login");
   };
+
   return (
-    <div className="nav-top">
-      <Link className="heading" to="/">
+    <div className={`nav-top ${responsive ? "responsive" : ""}`}>
+      <Link className="heading" to="/" onClick={() => setResponsive(false)}>
         Event Finder App
       </Link>
-      <button className="add-event" onClick={handleLogout}>
-        Logout
-      </button>
+      <button onClick={handleLogout}>Logout</button>
       <Link className="add-event" to="/addEvent">
         Add Event
       </Link>
+      <a className="icon" onClick={() => setResponsive(!responsive)}>
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
   );
 }

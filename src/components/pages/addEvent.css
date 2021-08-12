@@ -20,6 +20,13 @@ input {
   margin: 5px;
   border-radius: 4px;
 }
+
+.date-time {
+  padding: 10px;
+  margin: 5px;
+  width: 90%;
+}
+
 input[type="submit"] {
   margin: 10px 0 0 10px;
   width: 94%;

@@ -15,3 +15,12 @@
   height: 80.5vh;
   padding: 20px;
 }
+@media only screen and (max-width: 800px) {
+  .home,
+  .addEvent,
+  .editDetails,
+  .notFound {
+    top: 80px;
+    z-index: -1;
+  }
+}

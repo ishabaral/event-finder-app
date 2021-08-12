@@ -6,10 +6,12 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchEvent, fetchEventSuccess } from "../../redux/actions";
 import "./addEvent.css";
+import DateTimePicker from "react-datetime-picker";
 
 function AddEvent() {
   const history = useHistory();
   const dispatch = useDispatch();
+  const [dateTime, onChange] = useState(new Date());
 
   const {
     register,
@@ -18,8 +20,10 @@ function AddEvent() {
   } = useForm();
 
   const onSubmit = async (data, e) => {
+    console.log(dateTime);
     const events = {
       title: data.title,
+      dateTime: dateTime,
       date: data.date,
       startTime: data.startTime,
       description: data.description,
@@ -51,36 +55,11 @@ function AddEvent() {
           <ErrorMessage errors={errors} name="title" />
         </div>
         <br />
-        <input
-          {...register("date", {
-            required: "Date is required",
-            pattern: {
-              value: /(?=.*[0-9])/,
-              message: "Must include some number",
-            },
-          })}
-          placeholder="Date"
+        <DateTimePicker
+          className="date-time"
+          value={dateTime}
+          onChange={onChange}
         />
-        <br />
-        <div className="error-message">
-          <ErrorMessage errors={errors} name="date" />
-        </div>
-        <br />
-        <input
-          {...register("startTime", {
-            required: "Start Time is required",
-            pattern: {
-              value: /((1[0-2]|0?[1-9]):([0-5][0-9]) ?([AaPp][Mm]))/,
-              message: "Must be in hr:min am or pm format",
-            },
-          })}
-          placeholder="Start Time"
-        />
-        <br />
-        <div className="error-message">
-          <ErrorMessage errors={errors} name="startTime" />
-        </div>
-        <br />
         <input
           {...register("description", {
             required: "Description must not be empty",
