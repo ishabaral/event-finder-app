@@ -1,6 +1,7 @@
 import { ErrorMessage } from "@hookform/error-message";
 import axios from "axios";
 import React, { useState } from "react";
+import DateTimePicker from "react-datetime-picker/dist/DateTimePicker";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
@@ -11,7 +12,7 @@ function EditDetails() {
   const { id } = useParams();
   const history = useHistory();
   const dispatch = useDispatch();
-
+  const [dateTime, setDateTime] = useState(new Date());
   const events = useSelector((state) => state.eventReducer.events);
 
   const {
@@ -21,14 +22,26 @@ function EditDetails() {
   } = useForm();
 
   const onSubmit = async (data, e) => {
+    const dateOptions = {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      weekday: "short",
+    };
+    const timeOptions = {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+      hourCycle: "h12",
+    };
     const changedEvent = {
       title: data.title,
-      date: data.date,
-      startTime: data.startTime,
+      dateTime: dateTime,
+      date: `${dateTime.toLocaleDateString("en-US", dateOptions)}`,
+      startTime: `${dateTime.toLocaleTimeString("en-US", timeOptions)}`,
       description: data.description,
       author: data.author,
     };
-    console.log(data);
     e.preventDefault();
     await axios.patch(`http://localhost:4000/events/${id}`, changedEvent, {
       headers: {
@@ -63,38 +76,6 @@ function EditDetails() {
               </div>
               <br />
               <input
-                {...register("date", {
-                  required: "Date is required",
-                  pattern: {
-                    value: /(?=.*[0-9])/,
-                    message: "Must include some number",
-                  },
-                })}
-                defaultValue={event.date}
-                placeholder="Date"
-              />
-              <br />
-              <div className="error-message">
-                <ErrorMessage errors={errors} name="date" />
-              </div>
-              <br />
-              <input
-                defaultValue={event.startTime}
-                {...register("startTime", {
-                  required: "Start Time is required",
-                  pattern: {
-                    value: /((1[0-2]|0?[1-9]):([0-5][0-9]) ?([AaPp][Mm]))/,
-                    message: "Must be in hr:min am or pm format",
-                  },
-                })}
-                placeholder="Start Time"
-              />
-              <br />
-              <div className="error-message">
-                <ErrorMessage errors={errors} name="startTime" />
-              </div>
-              <br />
-              <input
                 defaultValue={event.description}
                 {...register("description", {
                   required: "Description must not be empty",
@@ -110,6 +91,19 @@ function EditDetails() {
                 <ErrorMessage errors={errors} name="description" />
               </div>
               <br />
+              <DateTimePicker
+                className="date-time"
+                value={dateTime}
+                yearPlaceholder="y"
+                monthPlaceholder="MM"
+                dayPlaceholder="dd"
+                hourPlaceholder="h"
+                minutePlaceholder="mm"
+                secondPlaceholder="ss"
+                // defaultValue={new Date(event.dateTime)}
+                onChange={setDateTime}
+                required
+              />
               <input
                 defaultValue={event.author}
                 type="text"
@@ -117,6 +111,7 @@ function EditDetails() {
                 placeholder="Author (optional)"
               />
               <br />
+
               <input type="Submit" value="Edit Event" />
             </form>
           );

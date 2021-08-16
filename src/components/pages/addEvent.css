@@ -21,10 +21,20 @@ input {
   border-radius: 4px;
 }
 
-.date-time {
-  padding: 10px;
-  margin: 5px;
-  width: 90%;
+.react-datetime-picker__wrapper {
+  border: 1px #7020ff solid !important;
+  margin: 10px 5px;
+  border-radius: 4px;
+}
+.react-datetime-picker__inputGroup {
+  padding: 10px !important;
+  outline: none;
+  width: 454px;
+  height: 42px;
+  border: none;
+}
+.react-datetime-picker__button {
+  outline: none;
 }
 
 input[type="submit"] {

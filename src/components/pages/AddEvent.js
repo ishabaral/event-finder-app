@@ -2,7 +2,7 @@ import { ErrorMessage } from "@hookform/error-message";
 import axios from "axios";
 import React, { useState } from "react";
 import { set, useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchEvent, fetchEventSuccess } from "../../redux/actions";
 import "./addEvent.css";
@@ -11,7 +11,8 @@ import DateTimePicker from "react-datetime-picker";
 function AddEvent() {
   const history = useHistory();
   const dispatch = useDispatch();
-  const [dateTime, onChange] = useState(new Date());
+  const [dateTime, setDateTime] = useState(new Date());
+  const isLogged = useSelector((state) => state.isLogged);
 
   const {
     register,
@@ -19,13 +20,26 @@ function AddEvent() {
     handleSubmit,
   } = useForm();
 
+  console.log(isLogged);
   const onSubmit = async (data, e) => {
-    console.log(dateTime);
+    const dateOptions = {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      weekday: "short",
+    };
+    const timeOptions = {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+      hourCycle: "h12",
+    };
+
     const events = {
       title: data.title,
       dateTime: dateTime,
-      date: data.date,
-      startTime: data.startTime,
+      date: `${dateTime.toLocaleDateString("en-US", dateOptions)}`,
+      startTime: `${dateTime.toLocaleTimeString("en-US", timeOptions)}`,
       description: data.description,
       author: data.author,
     };
@@ -55,11 +69,6 @@ function AddEvent() {
           <ErrorMessage errors={errors} name="title" />
         </div>
         <br />
-        <DateTimePicker
-          className="date-time"
-          value={dateTime}
-          onChange={onChange}
-        />
         <input
           {...register("description", {
             required: "Description must not be empty",
@@ -80,7 +89,12 @@ function AddEvent() {
           {...register("author")}
           placeholder="Author (optional)"
         />
-        <br />
+        <DateTimePicker
+          className="date-time"
+          value={dateTime}
+          onChange={setDateTime}
+          required
+        />
         <input type="Submit" value="Add Event" />
       </form>
     </div>

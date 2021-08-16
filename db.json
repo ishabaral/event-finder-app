@@ -2,84 +2,120 @@
   "events": [
     {
       "title": "Motivational Seminar by Nick Vujicic",
-      "date": "2021 October 3",
-      "startTime": "1:00pm",
+      "date": "Sat, Jul 3, 2021",
+      "startTime": "08:00 AM",
       "description": "Nick Vujicic will be invited to the seminar to motivate youth",
       "author": "#youthmotivation",
-      "id": 1
+      "id": 1,
+      "dateTime": "2021-07-03T02:15:00.000Z"
     },
     {
       "title": "Euphoria ( THE AFROBEATS EXPERIENCE ) AFRO PARTY",
-      "date": "September 29, 2021",
-      "startTime": "4:30pm",
+      "date": "Wed, Sep 29, 2021",
+      "startTime": "08:00 AM",
       "description": "This is a party that will give you an ultimate afrobeats experience . the most anticipated party of the year featuring toronto finest djs , mc and host for the night.",
       "author": "EUPHORIA",
-      "id": 2
+      "id": 2,
+      "dateTime": "2021-09-29T02:15:00.000Z"
     },
     {
-      "title": "Upper Mustang Motorcycle Tour",
-      "date": "Oct 3, 2021 - Oct 15, 2021",
-      "startTime": "7:00am",
+      "title": "Upper Mustang Motorcycle Tour (13 days)",
+      "date": "Sun, Oct 3, 2021",
+      "startTime": "07:00 AM",
       "description": "This ride is one of the ultimate rides in the rain shadow part of the wind-swept desert landscape of the Himalayas......",
       "author": "fireballsadventures",
-      "id": 3
+      "id": 3,
+      "dateTime": "2021-10-03T01:15:00.000Z"
     },
     {
       "title": "Manaslu Circuit Trek, Nepal Himalaya (5210m) - 16 Days",
-      "date": "Mon Nov 1, 2021 ",
-      "startTime": "6:00am",
+      "date": "Mon, Nov 1, 2021",
+      "startTime": "07:00 AM",
       "description": " Trekking in Nepal Mt.Manslu ( 8163m eight highest mountain in the world and is one of the fourteen 8000⁺ meter peaks. it dominates the Manaslu range bordering the Ganesh Himal range on the east and Annapurna to the west. Since the border with Tibet is a strategic location. The area is considered as restricted trekking destination where trek must be fully organized through a reputed trekking Agency. Like in other restricted trekking places, the permit is issued and regulated by the Immigration Department of Nepal. The area is relatively untouched by tourism but the numbers are exceeding dramatically the Manaslu circuit Trek start from a small village near the historic Gorkha (Gurkha) kingdom now a district of Nepal. We pass through lush hills and canyons dotted with enchanting villages on our way to Larkya la (5163m) one of the beautiful passes of the Himalaya. We drop down from Larky la to Marshayangdi valley, part of the Annapurna circuit and to the road which leads us back to Kathmandu. Since Annapurna circuit dying due to road construction, the Manaslu circuit is dramatically becoming one of the very popular trekking place in the Himalaya.",
       "author": "Our Club is registered on The British Mountaineering Council (BMC)",
-      "id": 4
+      "id": 4,
+      "dateTime": "2021-11-01T01:15:00.000Z"
     },
     {
       "title": "Cycling Competiton",
-      "date": "2021 September 25",
-      "startTime": "7:00am",
+      "date": "Sat, Sep 25, 2021",
+      "startTime": "07:00 AM",
       "description": "Cycling competition is going to be held between the youths of Pokhara",
       "author": "Lakeside Cycling",
-      "id": 5
+      "id": 5,
+      "dateTime": "2021-09-25T01:15:00.000Z"
     },
     {
       "title": "Cycling Competiton",
-      "date": "2021 September 25",
-      "startTime": "7:00am",
+      "date": "Sun, Aug 29, 2021",
+      "startTime": "11:21 AM",
       "description": "Cycling competition is going to be held between the youths of Pokhara",
       "author": "Lakeside Cycling",
-      "id": 6
-    },
-    {
-      "title": "Cycling Competiton",
-      "date": "2021 September 25",
-      "startTime": "7:00am",
-      "description": "Cycling competition is going to be held between the youths of Pokhara",
-      "author": "Lakeside Cycling",
-      "id": 8
-    },
-    {
-      "title": "Cycling Competiton",
-      "date": "2021 September 25",
-      "startTime": "7:00am",
-      "description": "Cycling competition is going to be held between the youths of Pokhara",
-      "author": "Lakeside Cycling",
-      "id": 9
+      "id": 6,
+      "dateTime": "2021-08-29T05:36:07.760Z"
     },
     {
       "title": "aaa",
-      "date": "2021 sep 1",
-      "startTime": "3:00pm",
-      "description": "dfgdh dh dhg erg hrth rh rh rthrt hj ytjyt uykyu yulk ",
-      "author": "we hrjh",
-      "id": 10
+      "dateTime": "2021-08-31T02:56:17.387Z",
+      "description": "thiis is a description boxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "author": "",
+      "id": 15,
+      "date": "Tue, Aug 31, 2021",
+      "startTime": "08:41 AM"
     },
     {
-      "title": "aaaaaaaa",
-      "dateTime": "2021-08-25T06:58:00.000Z",
-      "date": "sep 3",
-      "startTime": "3:00pm",
-      "description": "aaa rg dg g rhr rhtrthyt yuj ukj ku lku ui ly jtduj sre ",
-      "author": "fdgdg",
-      "id": 11
+      "title": "fgfdh",
+      "dateTime": "2021-08-13T02:53:51.926Z",
+      "date": "Fri, Aug 13, 2021",
+      "description": "safsdf sd gsg dg dgdgdgdhdhd h hrhhre ",
+      "author": "",
+      "id": 16,
+      "startTime": "08:38 AM"
+    },
+    {
+      "title": "fh j",
+      "dateTime": "2022-04-10T23:37:00.000Z",
+      "date": "Mon, Apr 11, 2022",
+      "startTime": "05:22 AM",
+      "description": "w ehrt jrtjkjuykliult uey 5y yr u ",
+      "author": "rg ",
+      "id": 22
+    },
+    {
+      "title": "gfh f",
+      "dateTime": "2021-09-20T02:37:50.726Z",
+      "date": "Mon, Sep 20, 2021",
+      "startTime": "8:22:50 AM",
+      "description": "dstg as fhn hk lyuolupyk ruh reta m dh j,hjlup;rd e",
+      "author": "rh rtu",
+      "id": 24
+    },
+    {
+      "title": "fh ",
+      "dateTime": "2021-12-01T02:42:25.073Z",
+      "date": "Wed, Dec 1, 2021",
+      "startTime": "08:27 AM",
+      "description": "asdfghjkpoliuytrewqzxcvbn rthrt rth  poiuytrejhn ",
+      "author": "jgh",
+      "id": 25
+    },
+    {
+      "title": "hj ",
+      "dateTime": "2021-07-03T01:15:00.000Z",
+      "date": "Sat, Jul 3, 2021",
+      "startTime": "07:00 AM",
+      "description": "g jgj hg  ukuykuyuykkuy kuy uy y",
+      "author": "hf ",
+      "id": 26
+    },
+    {
+      "title": "aaaa",
+      "dateTime": "2021-05-30T05:20:13.278Z",
+      "date": "Sun, May 30, 2021",
+      "startTime": "11:05 AM",
+      "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "author": "aaaaaaaaaaaaaaaaaaaaaaa",
+      "id": 27
     }
   ]
 }

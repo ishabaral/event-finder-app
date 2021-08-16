@@ -19,6 +19,12 @@
   padding: 10px;
   position: relative;
 }
+@media only screen and (max-width: 600px) {
+  .heading {
+    font-size: 20px;
+    padding: 3px 10px;
+  }
+}
 
 .add-event,
 .nav-top button {
@@ -55,7 +61,7 @@
   .icon {
     display: block;
     float: right;
-    padding: 15px;
+    padding: 3px 10px;
     font-size: 20px;
     color: #7020ff;
   }
@@ -88,4 +94,8 @@
     background-color: #7020ff;
     color: #fff;
   }
+}
+
+.nav-top {
+  position: absolute;
 }

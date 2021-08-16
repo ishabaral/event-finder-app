@@ -15,6 +15,14 @@ function Home() {
   const [modalEventId, setModalEventId] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const sortByDate = (arr) => {
+    const sorter = (a, b) => {
+      return new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime();
+    };
+    events.sort(sorter);
+  };
+  sortByDate(events);
+
   const handleDelete = async (id) => {
     await axios.delete(`http://localhost:4000/events/${id}`);
     dispatch(fetchEvent());
@@ -31,7 +39,7 @@ function Home() {
 
   return (
     <div className="home">
-      <div class="tbl-header">
+      <div className="tbl-header">
         <table className="home-table">
           <thead>
             <tr>
@@ -44,8 +52,8 @@ function Home() {
           </thead>
           <tbody>
             {loading ? (
-              <div class="loading-screen">
-                <div class="loading">
+              <div className="loading-screen">
+                <div className="loading">
                   <span></span>
                   <span></span>
                   <span></span>
@@ -62,13 +70,13 @@ function Home() {
                     <td>{event.startTime}</td>
                     <td className="actions">
                       <a onClick={() => handlePopUp(event.id)}>
-                        <i class="far fa-eye"></i>
+                        <i className="far fa-eye"></i>
                       </a>
                       <Link to={`/editDetails/${event.id}`}>
-                        <i class="far fa-edit"></i>
+                        <i className="far fa-edit"></i>
                       </Link>
                       <a onClick={() => handleDelete(event.id)}>
-                        <i class="fas fa-trash-alt"></i>
+                        <i className="fas fa-trash-alt"></i>
                       </a>
                     </td>
                   </tr>

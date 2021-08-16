@@ -3,11 +3,10 @@ import "./loginStyle.css";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { useDispatch, useSelector } from "react-redux";
-import { logIn, logOut } from "../../redux/actions";
+import { logIn } from "../../redux/actions";
 import { useHistory } from "react-router-dom";
 
 function Login() {
-  const isLogged = useSelector((state) => state.isLogged);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -22,7 +21,6 @@ function Login() {
     history.push("/");
   };
 
-  //   if (isLogged == false) {
   return (
     <div>
       <div className="login">
@@ -67,5 +65,5 @@ function Login() {
     </div>
   );
 }
-// }
+
 export default Login;
