@@ -24,8 +24,10 @@ function Home() {
   sortByDate(events);
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:4000/events/${id}`);
-    dispatch(fetchEvent());
+    if (window.confirm("Do you want to delete?")) {
+      await axios.delete(`http://localhost:4000/events/${id}`);
+      dispatch(fetchEvent());
+    }
   };
 
   const modal = (t) => {
