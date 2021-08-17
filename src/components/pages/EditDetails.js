@@ -61,6 +61,7 @@ function EditDetails() {
         className="event-box"
         onSubmit={handleSubmit(onSubmit)}
       >
+        <h2>Edit Event</h2>
         <input
           defaultValue={event.title}
           {...register("title", {

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { set, useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { fetchEvent, fetchEventSuccess } from "../../redux/actions";
+import { fetchEvent } from "../../redux/actions";
 import "./addEvent.css";
 import DateTimePicker from "react-datetime-picker";
 

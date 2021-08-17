@@ -6,14 +6,12 @@ import thunk from "redux-thunk";
 
 import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
-import persistStore from "redux-persist/es/persistStore";
+// import persistStore from "redux-persist/es/persistStore";
 
 const persistConfig = {
   key: "root",
   storage,
-  // stateReconciler: autoMergeLevel2
-  // whiteList: ["isLogged", "eventReducer"],
-  // migration: migrations,
+  whiteList: ["isLogged"],
 };
 const pReducer = persistReducer(persistConfig, rootReducer);
 

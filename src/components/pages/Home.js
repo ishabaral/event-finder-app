@@ -12,7 +12,7 @@ function Home() {
   const events = useSelector((state) => state.eventReducer.events);
   const loading = useSelector((state) => state.eventReducer.loading);
   const dispatch = useDispatch();
-  const [modalEventId, setModalEventId] = useState(0);
+  const [modalEvent, setModalEvent] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const sortByDate = (arr) => {
@@ -32,9 +32,9 @@ function Home() {
     setIsModalOpen(t);
   };
 
-  const handlePopUp = (id) => {
+  const handlePopUp = (event) => {
     modal(true);
-    setModalEventId(id);
+    setModalEvent(event);
   };
 
   return (
@@ -69,7 +69,7 @@ function Home() {
                     <td>{event.date}</td>
                     <td>{event.startTime}</td>
                     <td className="actions">
-                      <a onClick={() => handlePopUp(event.id)}>
+                      <a onClick={() => handlePopUp(event)}>
                         <i className="far fa-eye"></i>
                       </a>
                       <Link
@@ -90,7 +90,7 @@ function Home() {
             )}
           </tbody>
         </table>
-        <Popup id={modalEventId} isModalOpen={isModalOpen} modal={modal} />
+        <Popup event={modalEvent} isModalOpen={isModalOpen} modal={modal} />
       </div>
     </div>
   );

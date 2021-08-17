@@ -1,5 +1,9 @@
-h1 {
+h2 {
   text-align: center;
+  font-family: "PT Serif", serif;
+  font-size: 30px;
+  padding: 5px;
+  color: #7020ff;
 }
 
 .event-box {

@@ -1,7 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
 import "./popUpStyle.css";
-import { useSelector } from "react-redux";
 
 const customStyles = {
   content: {
@@ -20,8 +19,7 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 function Popup(props) {
-  const { id, isModalOpen, modal } = props;
-  const events = useSelector((state) => state.eventReducer.events);
+  const { event, isModalOpen, modal } = props;
 
   function closeModal() {
     modal(false);
@@ -30,28 +28,21 @@ function Popup(props) {
   return (
     <div>
       <Modal
-        // className="pop-up"
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
       >
-        {events
-          .filter((event) => event.id == id)
-          .map((event) => {
-            return (
-              <div className="displayEvents">
-                <h3>{event.title}</h3>
-                <button onClick={closeModal}>
-                  <i className="fas fa-times"></i>
-                </button>
-                <p>Date: {event.date}</p>
-                <p>Start Time : {event.startTime}</p>
-                <p>Description: {event.description}</p>
-                <p>Author: {event.author}</p>
-              </div>
-            );
-          })}
+        <div className="displayEvents">
+          <h3>{event.title}</h3>
+          <button onClick={closeModal}>
+            <i className="fas fa-times"></i>
+          </button>
+          <p>Date: {event.date}</p>
+          <p>Start Time : {event.startTime}</p>
+          <p>Description: {event.description}</p>
+          <p>Author: {event.author}</p>
+        </div>
       </Modal>
     </div>
   );
