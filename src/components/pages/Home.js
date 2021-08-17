@@ -72,7 +72,12 @@ function Home() {
                       <a onClick={() => handlePopUp(event.id)}>
                         <i className="far fa-eye"></i>
                       </a>
-                      <Link to={`/editDetails/${event.id}`}>
+                      <Link
+                        to={{
+                          pathname: `/editDetails/${event.id}`,
+                          state: { event },
+                        }}
+                      >
                         <i className="far fa-edit"></i>
                       </Link>
                       <a onClick={() => handleDelete(event.id)}>

@@ -4,16 +4,18 @@ import React, { useState } from "react";
 import DateTimePicker from "react-datetime-picker/dist/DateTimePicker";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useLocation, useParams } from "react-router-dom";
 import { fetchEvent } from "../../redux/actions";
 import "./addEvent.css";
 
 function EditDetails() {
   const { id } = useParams();
   const history = useHistory();
+  const location = useLocation();
   const dispatch = useDispatch();
-  const [dateTime, setDateTime] = useState(new Date());
-  const events = useSelector((state) => state.eventReducer.events);
+  const { event } = location.state;
+  const [dateTime, setDateTime] = useState(new Date(event.dateTime));
+  // console.log(location.state);
 
   const {
     register,
@@ -54,68 +56,62 @@ function EditDetails() {
 
   return (
     <div className="editDetails">
-      {events
-        .filter((event) => event.id == id)
-        .map((event) => {
-          return (
-            <form
-              key={event.id}
-              className="event-box"
-              onSubmit={handleSubmit(onSubmit)}
-            >
-              <input
-                defaultValue={event.title}
-                {...register("title", {
-                  required: "Title is required",
-                })}
-                placeholder="Enter the title of your Event"
-              />
-              <br />
-              <div className="error-message">
-                <ErrorMessage errors={errors} name="title" />
-              </div>
-              <br />
-              <input
-                defaultValue={event.description}
-                {...register("description", {
-                  required: "Description must not be empty",
-                  minLength: {
-                    value: 30,
-                    message: "Write at least 30 letters",
-                  },
-                })}
-                placeholder="Description"
-              />
-              <br />
-              <div className="error-message">
-                <ErrorMessage errors={errors} name="description" />
-              </div>
-              <br />
-              <DateTimePicker
-                className="date-time"
-                value={dateTime}
-                yearPlaceholder="y"
-                monthPlaceholder="MM"
-                dayPlaceholder="dd"
-                hourPlaceholder="h"
-                minutePlaceholder="mm"
-                secondPlaceholder="ss"
-                // defaultValue={new Date(event.dateTime)}
-                onChange={setDateTime}
-                required
-              />
-              <input
-                defaultValue={event.author}
-                type="text"
-                {...register("author")}
-                placeholder="Author (optional)"
-              />
-              <br />
+      <form
+        key={event.id}
+        className="event-box"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <input
+          defaultValue={event.title}
+          {...register("title", {
+            required: "Title is required",
+          })}
+          placeholder="Enter the title of your Event"
+        />
+        <br />
+        <div className="error-message">
+          <ErrorMessage errors={errors} name="title" />
+        </div>
+        <br />
+        <input
+          defaultValue={event.description}
+          {...register("description", {
+            required: "Description must not be empty",
+            minLength: {
+              value: 30,
+              message: "Write at least 30 letters",
+            },
+          })}
+          placeholder="Description"
+        />
+        <br />
+        <div className="error-message">
+          <ErrorMessage errors={errors} name="description" />
+        </div>
+        <br />
+        <DateTimePicker
+          className="date-time"
+          value={dateTime}
+          yearPlaceholder="y"
+          monthPlaceholder="MM"
+          dayPlaceholder="dd"
+          hourPlaceholder="h"
+          minutePlaceholder="mm"
+          secondPlaceholder="ss"
+          // defaultValue={new Date(event.dateTime)}
+          onChange={setDateTime}
+          required
+        />
+        <input
+          defaultValue={event.author}
+          type="text"
+          {...register("author")}
+          placeholder="Author (optional)"
+        />
+        <br />
 
-              <input type="Submit" value="Edit Event" />
-            </form>
-          );
-        })}
+        <input type="Submit" value="Edit Event" />
+      </form>
     </div>
   );
 }

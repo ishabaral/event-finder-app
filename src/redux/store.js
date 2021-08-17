@@ -11,7 +11,9 @@ import persistStore from "redux-persist/es/persistStore";
 const persistConfig = {
   key: "root",
   storage,
-  // whiteList: ["isLogged"],
+  // stateReconciler: autoMergeLevel2
+  // whiteList: ["isLogged", "eventReducer"],
+  // migration: migrations,
 };
 const pReducer = persistReducer(persistConfig, rootReducer);
 

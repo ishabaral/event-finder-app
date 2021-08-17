@@ -13,12 +13,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path="/login" exact component={Login} />
-          <ProtectedRoute
-            exact
-            path="/"
-            isLogged={isLogged}
-            component={Pages}
-          />
+          <ProtectedRoute path="/" isLogged={isLogged} component={Pages} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
