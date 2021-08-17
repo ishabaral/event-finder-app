@@ -25,7 +25,7 @@ function Login() {
     <div>
       <div className="login">
         <form className="box" onSubmit={handleSubmit(onSubmit)}>
-          <h1>Login</h1>
+          <h1>Event Finder App</h1>
           <input
             type="email"
             placeholder="Email"
