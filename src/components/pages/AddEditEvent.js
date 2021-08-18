@@ -3,13 +3,15 @@ import axios from "axios";
 import React, { useState } from "react";
 import DateTimePicker from "react-datetime-picker/dist/DateTimePicker";
 import { useForm } from "react-hook-form";
-import { useLocation, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useHistory, useLocation, useParams } from "react-router-dom";
 import { fetchEvent } from "../../redux/actions";
 import "./addEvent.css";
-import myHOC from "./myHOC";
+import { dateOptions, timeOptions } from "./dateTime";
 
 function AddEditEvent(props) {
-  const { dateOptions, timeOptions, dispatch, history } = props;
+  const dispatch = useDispatch();
+  const history = useHistory();
   const { id } = useParams();
   const location = useLocation();
   // const { event } = location.state;
@@ -115,4 +117,4 @@ function AddEditEvent(props) {
   );
 }
 
-export default myHOC(AddEditEvent);
+export default AddEditEvent;
