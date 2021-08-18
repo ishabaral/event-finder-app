@@ -6,7 +6,6 @@ import EditDetails from "./EditDetails";
 import NotFound from "./NotFound";
 import Navbar from "../Navbar";
 import Home from "./Home";
-import AddEditEvent from "./AddEditEvent";
 
 function Pages() {
   const isLogged = useSelector((state) => state.isLogged);
@@ -19,9 +18,9 @@ function Pages() {
       <Navbar />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/addEditEvent" exact component={AddEditEvent} />
-        <Route path="/addEditEvent/:id">
-          <AddEditEvent />
+        <Route path="/addEvent" exact component={AddEvent} />
+        <Route path="/editDetails/:id">
+          <EditDetails />
         </Route>
         <Route component={NotFound} />
       </Switch>

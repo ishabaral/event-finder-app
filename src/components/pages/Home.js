@@ -76,7 +76,7 @@ function Home() {
                       </a>
                       <Link
                         to={{
-                          pathname: `/addEditEvent/${event.id}`,
+                          pathname: `/editDetails/${event.id}`,
                           state: { event },
                         }}
                       >

@@ -39,7 +39,7 @@ function Navbar() {
       <button onClick={handleLogout}>Logout</button>
       <Link
         className="add-event"
-        to="/addEditEvent"
+        to="/addEvent"
         onClick={() => setResponsive(false)}
       >
         Add Event
