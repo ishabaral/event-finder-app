@@ -12,9 +12,10 @@ function AddEditEvent(props) {
   const { dateOptions, timeOptions, dispatch, history } = props;
   const { id } = useParams();
   const location = useLocation();
-  const { event } = location.state;
-  const [dateTime, setDateTime] = useState(new Date(event.dateTime));
-  // console.log(location.state);
+  // const { event } = location.state;
+  const [dateTime, setDateTime] = useState(
+    location.state.event ? new Date(location.state.event.dateTime) : new Date()
+  );
 
   const {
     register,
@@ -23,7 +24,7 @@ function AddEditEvent(props) {
   } = useForm();
 
   const onSubmit = async (data, e) => {
-    const changedEvent = {
+    const event = {
       title: data.title,
       dateTime: dateTime,
       date: `${dateTime.toLocaleDateString("en-US", dateOptions)}`,
@@ -32,11 +33,19 @@ function AddEditEvent(props) {
       author: data.author,
     };
     e.preventDefault();
-    await axios.patch(`http://localhost:4000/events/${id}`, changedEvent, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    if (location.state.event) {
+      await axios.patch(`http://localhost:4000/events/${id}`, event, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    } else {
+      await axios.post("http://localhost:4000/events", event, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    }
     dispatch(fetchEvent());
     history.push("/");
   };
@@ -44,14 +53,14 @@ function AddEditEvent(props) {
   return (
     <div className="editDetails">
       <form
-        key={event.id}
+        key={location.state.event ? location.state.event.id : ""}
         className="event-box"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h2>Edit Event</h2>
+        <h2>{location.state.event ? "Edit Event" : "Add Event"}</h2>
         <label>Title</label>
         <input
-          defaultValue={event.title}
+          defaultValue={location.state.event ? location.state.event.title : ""}
           {...register("title", {
             required: "Title is required",
           })}
@@ -64,7 +73,9 @@ function AddEditEvent(props) {
         <br />
         <label>Description</label>
         <input
-          defaultValue={event.description}
+          defaultValue={
+            location.state.event ? location.state.event.description : ""
+          }
           {...register("description", {
             required: "Description must not be empty",
             minLength: {
@@ -88,14 +99,17 @@ function AddEditEvent(props) {
         />
         <label>Author</label>
         <input
-          defaultValue={event.author}
+          defaultValue={location.state.event ? location.state.event.author : ""}
           type="text"
           {...register("author")}
           placeholder="Author (optional)"
         />
         <br />
 
-        <input type="Submit" value="Edit Event" />
+        <input
+          type="Submit"
+          value={location.state.event ? "Edit Event" : "Add Event"}
+        />
       </form>
     </div>
   );
