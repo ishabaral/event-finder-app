@@ -1,18 +1,15 @@
 import { ErrorMessage } from "@hookform/error-message";
 import axios from "axios";
 import React, { useState } from "react";
-import { set, useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import { fetchEvent } from "../../redux/actions";
 import "./addEvent.css";
 import DateTimePicker from "react-datetime-picker";
+import myHOC from "./myHOC";
 
-function AddEvent() {
-  const history = useHistory();
-  const dispatch = useDispatch();
+function AddEvent(props) {
+  const { dateOptions, timeOptions, events, history, dispatch } = props;
   const [dateTime, setDateTime] = useState(new Date());
-  const isLogged = useSelector((state) => state.isLogged);
 
   const {
     register,
@@ -20,29 +17,9 @@ function AddEvent() {
     handleSubmit,
   } = useForm();
 
-  console.log(isLogged);
   const onSubmit = async (data, e) => {
-    const dateOptions = {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-      weekday: "short",
-    };
-    const timeOptions = {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: true,
-      hourCycle: "h12",
-    };
-
-    const events = {
-      title: data.title,
-      dateTime: dateTime,
-      date: `${dateTime.toLocaleDateString("en-US", dateOptions)}`,
-      startTime: `${dateTime.toLocaleTimeString("en-US", timeOptions)}`,
-      description: data.description,
-      author: data.author,
-    };
+    const events = events(data, dateTime);
+    console.log(events);
     e.preventDefault();
 
     await axios.post("http://localhost:4000/events", events, {
@@ -101,4 +78,4 @@ function AddEvent() {
   );
 }
 
-export default AddEvent;
+export default myHOC(AddEvent);

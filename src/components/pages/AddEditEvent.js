@@ -8,8 +8,8 @@ import { fetchEvent } from "../../redux/actions";
 import "./addEvent.css";
 import myHOC from "./myHOC";
 
-function EditDetails(props) {
-  const { dateOptions, timeOptions, dispatch, history, events } = props;
+function AddEditEvent(props) {
+  const { dateOptions, timeOptions, dispatch, history } = props;
   const { id } = useParams();
   const location = useLocation();
   const { event } = location.state;
@@ -23,7 +23,14 @@ function EditDetails(props) {
   } = useForm();
 
   const onSubmit = async (data, e) => {
-    const changedEvent = events(data, dateTime);
+    const changedEvent = {
+      title: data.title,
+      dateTime: dateTime,
+      date: `${dateTime.toLocaleDateString("en-US", dateOptions)}`,
+      startTime: `${dateTime.toLocaleTimeString("en-US", timeOptions)}`,
+      description: data.description,
+      author: data.author,
+    };
     e.preventDefault();
     await axios.patch(`http://localhost:4000/events/${id}`, changedEvent, {
       headers: {
@@ -94,4 +101,4 @@ function EditDetails(props) {
   );
 }
 
-export default myHOC(EditDetails);
+export default myHOC(AddEditEvent);
