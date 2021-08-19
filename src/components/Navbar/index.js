@@ -1,21 +1,27 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { logOut } from "../../redux/actions";
 import "./style.css";
 
 function Navbar() {
-  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  // const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const dispatch = useDispatch();
   const history = useHistory();
   const [responsive, setResponsive] = useState(false);
   const menuRef = useRef();
+  const location = useLocation();
 
   const handleLogout = () => {
     dispatch(logOut());
-    console.log(isLoggedIn);
+    // console.log(isLoggedIn);
     history.push("/login");
+  };
+  const handleLinkClick = () => {
+    setResponsive(false);
+    location.reload();
+    // history.go(1)
   };
 
   useEffect(() => {
@@ -41,9 +47,9 @@ function Navbar() {
         className="add-event"
         to={{
           pathname: "/addEditEvent",
-          state: "Add Event",
+          state: "addEvent",
         }}
-        onClick={() => setResponsive(false)}
+        onClick={() => handleLinkClick()}
       >
         Add Event
       </Link>

@@ -6,7 +6,7 @@ import thunk from "redux-thunk";
 
 import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
-// import persistStore from "redux-persist/es/persistStore";
+import persistStore from "redux-persist/es/persistStore";
 
 const persistConfig = {
   key: "root",
@@ -19,11 +19,19 @@ const store = createStore(
   pReducer,
   composeWithDevTools(applyMiddleware(thunk))
 );
-// const persistor = persistStore(store);
+const persistor = persistStore(store);
 
 store.dispatch(fetchEvent());
-store.subscribe(() => {
-  console.log(store.getState());
-});
+// store.subscribe(() => {
+//   console.log(store.getState());
+// });
 
-export default store;
+persistor.persist = function () {
+  store.dispatch({
+    // type: _constants.PERSIST,
+    // register: register,
+    rehydrate: true,
+  });
+};
+
+export { store, persistor };

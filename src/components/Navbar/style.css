@@ -5,6 +5,7 @@
   padding: 20px;
   top: 0;
   box-sizing: border-box;
+  z-index: 1;
 }
 
 .nav-top {
@@ -94,8 +95,7 @@
     background-color: #7020ff;
     color: #fff;
   }
-}
-
-.nav-top {
-  position: absolute;
+  .nav-top {
+    position: absolute;
+  }
 }

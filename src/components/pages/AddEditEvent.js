@@ -1,7 +1,7 @@
 import { ErrorMessage } from "@hookform/error-message";
 import axios from "axios";
 import React, { useState } from "react";
-import DateTimePicker from "react-datetime-picker/dist/DateTimePicker";
+import DateTimePicker from "react-datetime-picker";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useHistory, useLocation, useParams } from "react-router-dom";
@@ -9,16 +9,16 @@ import { fetchEvent } from "../../redux/actions";
 import "./addEvent.css";
 import { dateOptions, timeOptions } from "./dateTime";
 
-function AddEditEvent(props) {
+function AddEditEvent() {
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
   const location = useLocation();
-  // const { event } = location.state;
   const [dateTime, setDateTime] = useState(
     location.state.event ? new Date(location.state.event.dateTime) : new Date()
   );
-
+  // console.log(location.state.event);
+  // console.log(dateTime);
   const {
     register,
     formState: { errors },
@@ -53,7 +53,7 @@ function AddEditEvent(props) {
   };
 
   return (
-    <div className="editDetails">
+    <div className="addEditEvent">
       <form
         key={location.state.event ? location.state.event.id : ""}
         className="event-box"
@@ -61,7 +61,9 @@ function AddEditEvent(props) {
       >
         <h2>{location.state.event ? "Edit Event" : "Add Event"}</h2>
         <label>Title</label>
+        {console.log(location.state.event ? location.state.event.title : "")}
         <input
+          className="event-input"
           defaultValue={location.state.event ? location.state.event.title : ""}
           {...register("title", {
             required: "Title is required",
@@ -75,9 +77,8 @@ function AddEditEvent(props) {
         <br />
         <label>Description</label>
         <input
-          defaultValue={
-            location.state.event ? location.state.event.description : ""
-          }
+          className="event-input"
+          value={location.state.event ? location.state.event.description : ""}
           {...register("description", {
             required: "Description must not be empty",
             minLength: {
@@ -101,7 +102,10 @@ function AddEditEvent(props) {
         />
         <label>Author</label>
         <input
-          defaultValue={location.state.event ? location.state.event.author : ""}
+          className="event-input"
+          defaultValue={
+            location.state.event ? location.state.event.author : " "
+          }
           type="text"
           {...register("author")}
           placeholder="Author (optional)"
@@ -109,6 +113,7 @@ function AddEditEvent(props) {
         <br />
 
         <input
+          className="event-submit"
           type="Submit"
           value={location.state.event ? "Edit Event" : "Add Event"}
         />

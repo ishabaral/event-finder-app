@@ -2,7 +2,7 @@ import React from "react";
 import "./loginStyle.css";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/actions";
 import { useHistory } from "react-router-dom";
 

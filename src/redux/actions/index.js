@@ -1,6 +1,5 @@
 import axios from "axios";
 import {
-  CLOSE,
   FETCH_EVENT_FAILURE,
   FETCH_EVENT_REQUEST,
   FETCH_EVENT_SUCCESS,
@@ -47,7 +46,7 @@ export const fetchEvent = () => {
       .get("http://localhost:4000/events")
       .then((res) => {
         const event = res.data;
-        console.log(event);
+        // console.log(event);
         dispatch(fetchEventSuccess(event));
       })
       .catch((err) => {

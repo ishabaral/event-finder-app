@@ -5,8 +5,7 @@
 }
 
 .home,
-.addEvent,
-.editDetails,
+.addEditEvent,
 .notFound {
   /* background-color: #f5f7fb; */
   position: relative;

@@ -1,8 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-import AddEvent from "./AddEvent";
-import EditDetails from "./EditDetails";
 import NotFound from "./NotFound";
 import Navbar from "../Navbar";
 import Home from "./Home";
@@ -11,7 +9,7 @@ import AddEditEvent from "./AddEditEvent";
 function Pages() {
   const isLogged = useSelector((state) => state.isLogged);
 
-  if (isLogged == false) {
+  if (isLogged === false) {
     <Redirect to="/login" />;
   }
   return (
