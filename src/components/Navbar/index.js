@@ -11,7 +11,6 @@ function Navbar() {
   const history = useHistory();
   const [responsive, setResponsive] = useState(false);
   const menuRef = useRef();
-  const location = useLocation();
 
   const handleLogout = () => {
     dispatch(logOut());
@@ -20,8 +19,7 @@ function Navbar() {
   };
   const handleLinkClick = () => {
     setResponsive(false);
-    location.reload();
-    // history.go(1)
+    window.location.assign("/addEvent");
   };
 
   useEffect(() => {
@@ -46,7 +44,7 @@ function Navbar() {
       <Link
         className="add-event"
         to={{
-          pathname: "/addEditEvent",
+          pathname: "/addEvent",
           state: "addEvent",
         }}
         onClick={() => handleLinkClick()}

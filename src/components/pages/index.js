@@ -16,8 +16,9 @@ function Pages() {
     <BrowserRouter>
       <Navbar />
       <Switch>
+        <Route path="/reload" component={null} key="reload" />
         <Route path="/" exact component={Home} />
-        <Route path="/addEditEvent" exact component={AddEditEvent} />
+        <Route path="/addEvent" component={AddEditEvent} />
         <Route path="/addEditEvent/:id">
           <AddEditEvent />
         </Route>

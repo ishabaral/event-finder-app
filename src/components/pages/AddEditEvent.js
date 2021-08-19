@@ -17,8 +17,7 @@ function AddEditEvent() {
   const [dateTime, setDateTime] = useState(
     location.state.event ? new Date(location.state.event.dateTime) : new Date()
   );
-  // console.log(location.state.event);
-  // console.log(dateTime);
+
   const {
     register,
     formState: { errors },
@@ -78,7 +77,9 @@ function AddEditEvent() {
         <label>Description</label>
         <input
           className="event-input"
-          value={location.state.event ? location.state.event.description : ""}
+          defaultValue={
+            location.state.event ? location.state.event.description : ""
+          }
           {...register("description", {
             required: "Description must not be empty",
             minLength: {
