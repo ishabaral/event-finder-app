@@ -13,9 +13,11 @@ function Navbar() {
   const menuRef = useRef();
 
   const handleLogout = () => {
-    dispatch(logOut());
-    // console.log(isLoggedIn);
-    history.push("/login");
+    if (window.confirm("Do you want to logout?")) {
+      dispatch(logOut());
+      // console.log(isLoggedIn);
+      history.push("/login");
+    }
   };
   const handleLinkClick = () => {
     setResponsive(false);
