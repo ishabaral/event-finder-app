@@ -2,12 +2,12 @@
   "events": [
     {
       "title": "Motivational Seminar by Nick Vujicic",
-      "date": "Fri, Jul 16, 2021",
-      "startTime": "08:00 AM",
+      "date": "Sat, Jul 17, 2021",
+      "startTime": "08:00 PM",
       "description": "Nick Vujicic will be invited to the seminar to motivate youth",
-      "author": "#youthmotivation",
+      "author": "youthmotivation",
       "id": 1,
-      "dateTime": "2021-07-16T02:15:00.000Z"
+      "dateTime": "2021-07-17T14:15:00.000Z"
     },
     {
       "title": "Euphoria ( THE AFROBEATS EXPERIENCE ) AFRO PARTY",
@@ -215,6 +215,15 @@
       "description": "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCccc",
       "author": "AAA",
       "id": 41
+    },
+    {
+      "title": "pratima",
+      "dateTime": "2021-08-28T10:42:48.091Z",
+      "date": "Sat, Aug 28, 2021",
+      "startTime": "04:27 PM",
+      "description": "sssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+      "author": " aa",
+      "id": 42
     }
   ]
 }

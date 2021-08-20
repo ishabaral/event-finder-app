@@ -53,16 +53,7 @@ function Home() {
             </tr>
           </thead>
           <tbody>
-            {loading ? (
-              <div className="loading-screen">
-                <div className="loading">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-            ) : (
+            {!loading &&
               events.map((event) => {
                 return (
                   <tr key={event.id}>
@@ -88,9 +79,18 @@ function Home() {
                     </td>
                   </tr>
                 );
-              })
-            )}
+              })}
           </tbody>
+          {loading && (
+            <div className="loading-screen">
+              <div className="loading">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          )}
         </table>
         <Popup event={modalEvent} isModalOpen={isModalOpen} modal={modal} />
       </div>

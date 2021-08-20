@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 // import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { logOut } from "../../redux/actions";
 import "./style.css";
 

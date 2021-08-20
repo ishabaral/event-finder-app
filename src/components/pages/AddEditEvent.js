@@ -60,7 +60,6 @@ function AddEditEvent() {
       >
         <h2>{location.state.event ? "Edit Event" : "Add Event"}</h2>
         <label>Title</label>
-        {console.log(location.state.event ? location.state.event.title : "")}
         <input
           className="event-input"
           defaultValue={location.state.event ? location.state.event.title : ""}
@@ -104,20 +103,20 @@ function AddEditEvent() {
         <label>Author</label>
         <input
           className="event-input"
-          defaultValue={
-            location.state.event ? location.state.event.author : " "
-          }
+          defaultValue={location.state.event ? location.state.event.author : ""}
           type="text"
           {...register("author")}
           placeholder="Author (optional)"
         />
         <br />
 
-        <input
+        <button
           className="event-submit"
-          type="Submit"
-          value={location.state.event ? "Edit Event" : "Add Event"}
-        />
+          type="submit"
+          // value={location.state.event ? "Edit Event" : "Add Event"}
+        >
+          {location.state.event ? "Edit Event" : "Add Event"}
+        </button>
       </form>
     </div>
   );
