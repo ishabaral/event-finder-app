@@ -2,12 +2,12 @@
   "events": [
     {
       "title": "Motivational Seminar by Nick Vujicic",
-      "date": "Sat, Jul 17, 2021",
+      "date": "Fri, Jul 16, 2021",
       "startTime": "08:00 PM",
       "description": "Nick Vujicic will be invited to the seminar to motivate youth",
       "author": "youthmotivation",
       "id": 1,
-      "dateTime": "2021-07-17T14:15:00.000Z"
+      "dateTime": "2021-07-16T14:15:00.000Z"
     },
     {
       "title": "Euphoria ( THE AFROBEATS EXPERIENCE ) AFRO PARTY",
@@ -136,7 +136,7 @@
       "id": 32
     },
     {
-      "title": "zzsz",
+      "title": "zzz",
       "dateTime": "2021-08-18T01:34:32.409Z",
       "date": "Wed, Aug 18, 2021",
       "startTime": "07:19 AM",
@@ -215,6 +215,15 @@
       "description": "sssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
       "author": " aa",
       "id": 42
+    },
+    {
+      "title": "Teej Song Competition",
+      "dateTime": "2021-08-27T10:44:46.973Z",
+      "date": "Fri, Aug 27, 2021",
+      "startTime": "04:29 PM",
+      "description": "Teej Song Competition is organized by women's club of Fulbari",
+      "author": "Women's club",
+      "id": 43
     }
   ]
 }

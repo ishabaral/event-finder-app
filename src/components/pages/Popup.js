@@ -36,7 +36,7 @@ function Popup(props) {
         <div className="displayEvents">
           <h3>{event.title}</h3>
           <button onClick={closeModal}>
-            <i className="fas fa-times"></i>
+            <i className="fa fa-times"></i>
           </button>
           <p>Date: {event.date}</p>
           <p>Start Time : {event.startTime}</p>

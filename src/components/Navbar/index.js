@@ -42,19 +42,21 @@ function Navbar() {
       <Link className="heading" to="/">
         Event Finder App
       </Link>
-      <button className="logout-btn" onClick={handleLogout}>
-        Logout
-      </button>
-      <Link
-        className="add-event"
-        to={{
-          pathname: "/addEvent",
-          state: "addEvent",
-        }}
-        onClick={() => handleLinkClick()}
-      >
-        Add Event
-      </Link>
+      <div className="menu-items">
+        <button className="logout-btn" onClick={handleLogout}>
+          Logout
+        </button>
+        <Link
+          className="add-event"
+          to={{
+            pathname: "/addEvent",
+            state: "addEvent",
+          }}
+          onClick={() => handleLinkClick()}
+        >
+          Add Event
+        </Link>
+      </div>
       <div className="icon" onClick={() => setResponsive(!responsive)}>
         <i className="fa fa-bars"></i>
       </div>
