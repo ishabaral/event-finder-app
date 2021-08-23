@@ -65,19 +65,15 @@
     padding: 3px 10px;
     font-size: 20px;
     color: #7020ff;
-    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    right: 25px;
+    top: 35px;
   }
   .responsive {
     position: relative;
   }
-  .responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .responsive button,
+  .responsive .logout-btn,
   .responsive .add-event {
-    /* position: absolute; */
     float: none;
     display: block;
     text-align: left;

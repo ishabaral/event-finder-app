@@ -62,9 +62,9 @@ function Home() {
                     <td>{event.date}</td>
                     <td>{event.startTime}</td>
                     <td className="actions">
-                      <a onClick={() => handlePopUp(event)}>
+                      <button onClick={() => handlePopUp(event)}>
                         <i className="fa fa-eye"></i>
-                      </a>
+                      </button>
                       <Link
                         to={{
                           pathname: `/addEditEvent/${event.id}`,
@@ -73,25 +73,25 @@ function Home() {
                       >
                         <i className="fa fa-edit"></i>
                       </Link>
-                      <a onClick={() => handleDelete(event.id)}>
+                      <button onClick={() => handleDelete(event.id)}>
                         <i className="fa fa-trash"></i>
-                      </a>
+                      </button>
                     </td>
                   </tr>
                 );
               })}
           </tbody>
-          {loading && (
-            <div className="loading-screen">
-              <div className="loading">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-          )}
         </table>
+        {loading && (
+          <div className="loading-screen">
+            <div className="loading">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        )}
         <Popup event={modalEvent} isModalOpen={isModalOpen} modal={modal} />
       </div>
     </div>
