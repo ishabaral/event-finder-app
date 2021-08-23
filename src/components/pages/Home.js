@@ -63,7 +63,7 @@ function Home() {
                     <td>{event.startTime}</td>
                     <td className="actions">
                       <a onClick={() => handlePopUp(event)}>
-                        <i className="far fa-eye"></i>
+                        <i className="fa fa-eye"></i>
                       </a>
                       <Link
                         to={{
@@ -71,10 +71,10 @@ function Home() {
                           state: { event },
                         }}
                       >
-                        <i className="far fa-edit"></i>
+                        <i className="fa fa-edit"></i>
                       </Link>
                       <a onClick={() => handleDelete(event.id)}>
-                        <i className="fas fa-trash-alt"></i>
+                        <i className="fa fa-trash"></i>
                       </a>
                     </td>
                   </tr>

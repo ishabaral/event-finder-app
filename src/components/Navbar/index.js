@@ -42,7 +42,9 @@ function Navbar() {
       <Link className="heading" to="/">
         Event Finder App
       </Link>
-      <button onClick={handleLogout}>Logout</button>
+      <button className="logout-btn" onClick={handleLogout}>
+        Logout
+      </button>
       <Link
         className="add-event"
         to={{
@@ -53,9 +55,9 @@ function Navbar() {
       >
         Add Event
       </Link>
-      <a className="icon" onClick={() => setResponsive(!responsive)}>
+      <div className="icon" onClick={() => setResponsive(!responsive)}>
         <i className="fa fa-bars"></i>
-      </a>
+      </div>
     </div>
   );
 }

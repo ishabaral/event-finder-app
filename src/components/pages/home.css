@@ -75,19 +75,19 @@ tbody tr:hover {
 
 .fa-eye,
 .fa-edit,
-.fa-trash-alt {
+.fa-trash {
   color: #7020ff;
   padding: 0 5px;
   font-size: 20px;
 }
-.fa-trash-alt {
+.fa-trash {
   color: rgb(211 1 0);
 }
 
 @media only screen and (max-width: 800px) {
   .fa-eye,
   .fa-edit,
-  .fa-trash-alt {
+  .fa-trash {
     padding: 5px;
   }
   .tbl-header {
