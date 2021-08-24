@@ -55,10 +55,25 @@ label {
 }
 @media only screen and (max-width: 800px) {
   .event-box {
-    width: 300px;
+    width: 350px;
   }
   .react-datetime-picker__wrapper {
-    width: 292px;
+    width: 337px;
+    box-sizing: border-box;
+  }
+  .event-submit {
+    width: 96.5%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .event-box {
+    width: 259px;
+  }
+  .react-datetime-picker__wrapper {
+    width: 252px;
+  }
+  .event-submit {
+    width: 98.8%;
   }
 }
 .react-datetime-picker__inputGroup {
