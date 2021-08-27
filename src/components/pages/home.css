@@ -91,7 +91,7 @@ tbody tr:hover button {
 .fa-trash {
   color: #7020ff;
   padding: 0 5px;
-  font-size: 20px;
+  font-size: calc(16px + (22 - 16) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .fa-trash {
