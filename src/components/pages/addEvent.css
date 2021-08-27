@@ -1,7 +1,7 @@
 h2 {
   text-align: center;
   font-family: "PT Serif", serif;
-  font-size: 30px;
+  font-size: calc(25px + (30 - 25) * ((100vw - 300px) / (1600 - 300)));
   padding: 0 5px 5px;
   color: #7020ff;
 }
@@ -17,12 +17,12 @@ h2 {
 
 label {
   padding: 10px;
-  font-size: 17px;
+  font-size: calc(14px + (17 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .event-input {
   padding: 10px;
-  font-size: 17px;
+  font-size: calc(14px + (17 - 14) * ((100vw - 300px) / (1600 - 300)));
   width: 90%;
   outline: none;
   border: 1px #7020ff solid;
@@ -33,7 +33,7 @@ label {
   padding: 10px;
   margin: 10px 0 0 3.5px;
   width: 94.5%;
-  font-size: 20px;
+  font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
   color: white;
   background: #7020ff;
   outline: none;
@@ -83,6 +83,7 @@ label {
   margin: 0;
   height: 42px;
   border: none;
+  font-size: calc(14px + (17 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .react-datetime-picker__button {
