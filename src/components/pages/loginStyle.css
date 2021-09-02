@@ -55,6 +55,7 @@
   padding: 14px 40px;
   outline: none;
   color: white;
+  text-transform: uppercase;
   width: 220px;
   border-radius: 24px;
   transition: 0.25s;
@@ -63,4 +64,8 @@
 .box input[type="submit"]:hover {
   color: #7020ff;
   background-color: white;
+}
+.register-login-link {
+  color: #fff;
+  font-size: 0.9rem;
 }

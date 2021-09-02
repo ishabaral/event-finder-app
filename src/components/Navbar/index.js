@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { logOut } from "../../redux/actions";
+import { fetchUsers } from "../../redux/actions/fetchUsers";
 import "./style.css";
 
 function Navbar() {
@@ -15,7 +16,8 @@ function Navbar() {
   const handleLogout = () => {
     if (window.confirm("Do you want to logout?")) {
       dispatch(logOut());
-      // console.log(isLoggedIn);
+      dispatch(fetchUsers());
+      localStorage.removeItem("user");
       history.push("/login");
     }
   };

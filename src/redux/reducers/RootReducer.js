@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import eventReducer from "./eventReducer";
-import isLogged from "./isLogged";
+import authReducer from "./authReducer";
 
 const rootReducer = combineReducers({
   eventReducer: eventReducer,
-  isLogged: isLogged,
+  authReducer: authReducer,
 });
 
 export default rootReducer;

@@ -1,27 +1,35 @@
-import { applyMiddleware, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { fetchEvent } from "./actions";
-import rootReducer from "./reducers";
+import { fetchEvent } from "./actions/fetchEvent";
 import thunk from "redux-thunk";
-
 import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
+import authReducer from "./reducers/authReducer";
+import userReducer from "./reducers/userReducer";
+import eventReducer from "./reducers/eventReducer";
+import { fetchUsers } from "./actions/fetchUsers";
 
 const persistConfig = {
   key: "root",
   storage,
   whiteList: ["isLogged"],
 };
-const pReducer = persistReducer(persistConfig, rootReducer);
+
+const rootReducer = combineReducers({
+  authReducer: persistReducer(persistConfig, authReducer),
+  userReducer: userReducer,
+  eventReducer: eventReducer,
+});
 
 const store = createStore(
-  pReducer,
+  rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
 );
 const persistor = persistStore(store);
 
 store.dispatch(fetchEvent());
+store.dispatch(fetchUsers());
 // store.subscribe(() => {
 //   console.log(store.getState());
 // });

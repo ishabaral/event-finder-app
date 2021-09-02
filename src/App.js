@@ -7,12 +7,13 @@ import NotFound from "./components/pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
-  const isLogged = useSelector((state) => state.isLogged);
+  const isLogged = useSelector((state) => state.authReducer.isLogged);
   return (
     <div className="App">
       <BrowserRouter>
         <Switch>
           <Route path="/login" exact component={Login} />
+          <Route path="/register" component={Login} />
           <ProtectedRoute path="/" isLogged={isLogged} component={Pages} />
           <Route component={NotFound} />
         </Switch>

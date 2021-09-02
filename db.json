@@ -1,4 +1,31 @@
 {
+  "users": [
+    {
+      "email": "isha@gmail.com",
+      "password": 123456,
+      "id": 1
+    },
+    {
+      "email": "divya@gmail.com",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "email": "divya@gmail.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "email": "aaa@gmail.com",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "email": "abc@gmail.com",
+      "password": "123456",
+      "id": 5
+    }
+  ],
   "events": [
     {
       "title": "Motivational Seminar by Nick Vujicic",
@@ -143,15 +170,6 @@
       "description": "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
       "author": "nnn",
       "id": 37
-    },
-    {
-      "title": "bbbbbbb",
-      "dateTime": "2025-03-06T04:34:00.000Z",
-      "date": "Thu, Mar 6, 2025",
-      "startTime": "10:19 AM",
-      "description": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-      "author": "",
-      "id": 38
     },
     {
       "title": "Day Dreamer",

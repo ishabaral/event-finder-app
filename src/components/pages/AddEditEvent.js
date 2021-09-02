@@ -5,7 +5,7 @@ import DateTimePicker from "react-datetime-picker";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useHistory, useLocation, useParams } from "react-router-dom";
-import { fetchEvent } from "../../redux/actions";
+import { fetchEvent } from "../../redux/actions/fetchEvent";
 import "./addEvent.css";
 import { dateOptions, timeOptions } from "./dateTime";
 

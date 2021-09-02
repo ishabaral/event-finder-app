@@ -1,9 +1,15 @@
+export const LOG_IN = "LOG_IN";
+
+export const LOG_OUT = "LOG_OUT";
+
+export const FETCH_USER_REQUEST = "FETCH_USER_REQUEST";
+
+export const FETCH_USER_SUCCESS = "FETCH_USER_SUCCESS";
+
+export const FETCH_USER_FAILURE = "FETCH_USER_FAILURE";
+
 export const FETCH_EVENT_REQUEST = "FETCH_EVENT_REQUEST";
 
 export const FETCH_EVENT_SUCCESS = "FETCH_EVENT_SUCCESS";
 
 export const FETCH_EVENT_FAILURE = "FETCH_EVENT_FAILURE";
-
-export const LOG_IN = "LOG_IN";
-
-export const LOG_OUT = "LOG_OUT";
