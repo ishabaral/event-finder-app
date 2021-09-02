@@ -1,15 +1,15 @@
 import React from "react";
-import "./loginStyle.css";
+import "./styles.css";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { useDispatch, useSelector } from "react-redux";
-import { logIn } from "../../redux/actions";
+import { logIn } from "../../../redux/actions";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 
-function Login() {
+function LoginRegister() {
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
@@ -125,4 +125,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginRegister;

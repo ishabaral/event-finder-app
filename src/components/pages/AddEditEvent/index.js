@@ -5,9 +5,11 @@ import DateTimePicker from "react-datetime-picker";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useHistory, useLocation, useParams } from "react-router-dom";
-import { fetchEvent } from "../../redux/actions/fetchEvent";
-import "./addEvent.css";
+import { fetchEvent } from "../../../redux/actions/fetchEvent";
+import "./styles.css";
 import { dateOptions, timeOptions } from "./dateTime";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function AddEditEvent() {
   const dispatch = useDispatch();
@@ -43,12 +45,14 @@ function AddEditEvent() {
           "Content-Type": "application/json",
         },
       });
+      toast.success("Successfully edited");
     } else {
       await axios.post("http://localhost:4000/events", event, {
         headers: {
           "Content-Type": "application/json",
         },
       });
+      toast.success("Successfully Added");
     }
     dispatch(fetchEvent());
     history.push("/");
@@ -113,14 +117,11 @@ function AddEditEvent() {
         />
         <br />
 
-        <button
-          className="event-submit"
-          type="submit"
-          // value={location.state.event ? "Edit Event" : "Add Event"}
-        >
+        <button className="event-submit" type="submit">
           {location.state.event ? "Edit Event" : "Add Event"}
         </button>
       </form>
+      <ToastContainer theme="colored" position="bottom-center" />
     </div>
   );
 }

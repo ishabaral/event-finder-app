@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./home.css";
+import "./styles.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./loadingStyle.css";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { fetchEvent } from "../../redux/actions/fetchEvent";
+import { fetchEvent } from "../../../redux/actions/fetchEvent";
 import Popup from "./Popup";
 
 function Home() {

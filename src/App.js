@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Pages from "./components/pages";
-import Login from "./components/pages/Login";
+import LoginRegister from "./components/pages/LoginRegister";
 import NotFound from "./components/pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -12,8 +12,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route path="/login" exact component={Login} />
-          <Route path="/register" component={Login} />
+          <Route path="/login" exact component={LoginRegister} />
+          <Route path="/register" component={LoginRegister} />
           <ProtectedRoute path="/" isLogged={isLogged} component={Pages} />
           <Route component={NotFound} />
         </Switch>
