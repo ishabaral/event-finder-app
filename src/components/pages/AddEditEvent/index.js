@@ -27,9 +27,6 @@ function AddEditEvent() {
   } = useForm();
 
   const onSubmit = async (data, e) => {
-    // console.log(location.state.event == data ? "true" : "false");
-    // console.log(data);
-    // console.log(location.state.event);
     const event = {
       title: data.title,
       dateTime: dateTime,
@@ -121,7 +118,6 @@ function AddEditEvent() {
           {location.state.event ? "Edit Event" : "Add Event"}
         </button>
       </form>
-      <ToastContainer theme="colored" position="bottom-center" />
     </div>
   );
 }

@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { useDispatch, useSelector } from "react-redux";
 import { logIn } from "../../../redux/actions";
 import { Link, useHistory, useLocation } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import axios from "axios";
 
 function LoginRegister() {
@@ -14,12 +13,17 @@ function LoginRegister() {
   const history = useHistory();
   const location = useLocation();
   const users = useSelector((state) => state.userReducer.users);
+  const [passwordVisibility, setPasswordVisibility] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisibility(!passwordVisibility);
+  };
 
   const onSubmit = (data) => {
     if (location.state == "register") {
@@ -76,17 +80,29 @@ function LoginRegister() {
           </div>
 
           <br />
-          <input
-            type="password"
-            placeholder="Password"
-            {...register("password", {
-              required: "Password must not be empty",
-              pattern: {
-                value: /(?=.*[0-9])/,
-                message: "must contain some number",
-              },
-            })}
-          />
+          <div className="password-wrapper">
+            <input
+              type={passwordVisibility ? "text" : "password"}
+              placeholder="Password"
+              {...register("password", {
+                required: "Password must not be empty",
+                pattern: {
+                  value: /(?=.*[0-9])/,
+                  message: "must contain some number",
+                },
+              })}
+            />
+            <a onClick={togglePasswordVisibility}>
+              {passwordVisibility ? (
+                <i className="fa fa-eye password-eye" aria-hidden="true"></i>
+              ) : (
+                <i
+                  className="fa fa-eye-slash password-eye"
+                  aria-hidden="true"
+                ></i>
+              )}
+            </a>
+          </div>
           <br />
           <div style={{ color: "red" }}>
             <ErrorMessage errors={errors} name="password" />
@@ -119,7 +135,6 @@ function LoginRegister() {
             </Link>
           )}
         </form>
-        <ToastContainer theme="light" position="top-center" />
       </div>
     </div>
   );

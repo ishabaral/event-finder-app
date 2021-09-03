@@ -1,5 +1,7 @@
 import { useSelector } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Pages from "./components/pages";
 import LoginRegister from "./components/pages/LoginRegister";
@@ -11,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <ToastContainer theme="colored" />
         <Switch>
           <Route path="/login" exact component={LoginRegister} />
           <Route path="/register" component={LoginRegister} />

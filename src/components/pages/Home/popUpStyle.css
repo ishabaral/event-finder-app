@@ -19,3 +19,7 @@
 .displayEvents p {
   padding: 10px;
 }
+
+.description {
+  display: block;
+}
