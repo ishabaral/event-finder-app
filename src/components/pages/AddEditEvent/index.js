@@ -8,7 +8,7 @@ import { useHistory, useLocation, useParams } from "react-router-dom";
 import { fetchEvent } from "../../../redux/actions/fetchEvent";
 import "./styles.css";
 import { dateOptions, timeOptions } from "./dateTime";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function AddEditEvent() {
