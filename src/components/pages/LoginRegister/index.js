@@ -26,8 +26,8 @@ function LoginRegister() {
   };
 
   const onSubmit = (data) => {
-    if (location.state == "register") {
-      const sameEmail = users.find((user) => data.email == user.email);
+    if (location.state === "register") {
+      const sameEmail = users.find((user) => data.email === user.email);
       if (sameEmail) {
         toast.warn("Email already exists! Please choose a unique email");
       } else {
@@ -45,8 +45,9 @@ function LoginRegister() {
         history.push("/");
       }
     } else {
+      console.log(data, users)
       const registeredUser = users.find(
-        (user) => data.email == user.email && data.password == user.password
+        (user) => data.email === user.email && data.password === user.password
       );
       if (registeredUser) {
         dispatch(logIn());

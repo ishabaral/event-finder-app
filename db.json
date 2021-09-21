@@ -2,7 +2,7 @@
   "users": [
     {
       "email": "isha@gmail.com",
-      "password": 123456,
+      "password": "123456",
       "id": 1
     },
     {
