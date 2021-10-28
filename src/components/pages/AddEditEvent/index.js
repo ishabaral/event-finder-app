@@ -17,8 +17,9 @@ function AddEditEvent() {
   const { id } = useParams();
   const location = useLocation();
   const [dateTime, setDateTime] = useState(
-    location.state.event ? new Date(location.state.event.dateTime) : new Date()
+    location.state?.event ?  new Date(location.state?.event.dateTime) : new Date()
   );
+  console.log(location)
 
   const {
     register,
@@ -36,7 +37,7 @@ function AddEditEvent() {
       author: data.author,
     };
     e.preventDefault();
-    if (location.state.event) {
+    if (location.state?.event) {
       await axios.patch(`http://localhost:4000/events/${id}`, event, {
         headers: {
           "Content-Type": "application/json",
@@ -58,15 +59,15 @@ function AddEditEvent() {
   return (
     <div className="addEditEvent">
       <form
-        key={location.state.event ? location.state.event.id : ""}
+        key={location.state?.event ? location.state?.event.id : ""}
         className="event-box"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h2>{location.state.event ? "Edit Event" : "Add Event"}</h2>
+        <h2>{location.state?.event ? "Edit Event" : "Add Event"}</h2>
         <label>Title</label>
         <input
           className="event-input"
-          defaultValue={location.state.event ? location.state.event.title : ""}
+          defaultValue={location.state?.event ? location.state?.event.title : ""}
           {...register("title", {
             required: "Title is required",
           })}
@@ -81,7 +82,7 @@ function AddEditEvent() {
         <input
           className="event-input"
           defaultValue={
-            location.state.event ? location.state.event.description : ""
+            location.state?.event ? location.state?.event.description : ""
           }
           {...register("description", {
             required: "Description must not be empty",
@@ -107,7 +108,7 @@ function AddEditEvent() {
         <label>Author</label>
         <input
           className="event-input"
-          defaultValue={location.state.event ? location.state.event.author : ""}
+          defaultValue={location.state?.event ? location.state?.event.author : ""}
           type="text"
           {...register("author")}
           placeholder="Author (optional)"
@@ -115,7 +116,7 @@ function AddEditEvent() {
         <br />
 
         <button className="event-submit" type="submit">
-          {location.state.event ? "Edit Event" : "Add Event"}
+          {location.state?.event ? "Edit Event" : "Add Event"}
         </button>
       </form>
     </div>

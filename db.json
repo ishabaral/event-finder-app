@@ -24,6 +24,11 @@
       "email": "abc@gmail.com",
       "password": "123456",
       "id": 5
+    },
+    {
+      "email": "kushal@gmail.com",
+      "password": "123456",
+      "id": 6
     }
   ],
   "events": [
